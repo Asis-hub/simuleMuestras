@@ -3,7 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-6 col-lg-4 mb-2">
-            Botón 1 - Placeholder
+            <a class="nav-link active" href="{{ route('surveyor.index') }}">Reporte de calculo de encuestadores</a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             Botón 2 - Placeholder
