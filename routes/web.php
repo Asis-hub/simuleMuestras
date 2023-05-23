@@ -19,3 +19,5 @@ Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@in
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
 Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUserController@index')->name("admin.user.index");
 Route::post('/admin/users/store', 'App\Http\Controllers\Admin\AdminUserController@store')->name("admin.user.store");
+
+Auth::routes();
