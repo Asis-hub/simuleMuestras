@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Nombre:</label>
+                                <label class="col-form-label">Nombre:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                     <input name="name" value="{{ old('name') }}" type="text" class="form-control">
                                 </div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col">
                             <div class="mb-3 row">
-                                <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Correo Electrónico:</label>
+                                <label class="col-form-label">Correo Electrónico:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
                                     <input name="email" value="{{ old('email') }}" type="text" class="form-control">
                                 </div>
@@ -36,7 +36,7 @@
                         <div class="col">
                             <div class="mb-3 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
+                                    class="col-form-label">{{ __('Contraseña') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -55,7 +55,7 @@
                         <div class="col">
                             <div class="mb-3 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('Confirmar Contraseña') }}</label>
+                                    class="col-form-label">{{ __('Confirmar Contraseña') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
