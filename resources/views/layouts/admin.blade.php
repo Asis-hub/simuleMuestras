@@ -20,7 +20,7 @@
             <hr />
             <ul class="nav flex-column">
                 <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- Admin - Inicio</a></li>
-                <li><a href="#" class="nav-link text-white">- Admin - Usuarios</a></li>
+                <li><a href="{{ route('admin.user.index') }}" class="nav-link text-white">- Admin - Usuarios</a></li>
                 <li>
                     <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Regresar al menú principal</a>
                 </li>
