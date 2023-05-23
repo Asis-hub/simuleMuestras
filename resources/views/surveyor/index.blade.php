@@ -6,10 +6,9 @@
         @foreach ($viewData['surveyors'] as $surveyor)
             <div class="col-md-4 col-lg-3 mb-2">
                 <div class="card">
-                    <img src="{{ asset('/img/' . $product['image']) }}" class="card-img-top img-card">
                     <div class="card-body text-center">
-                        <a href="{{ route('surveyor.show', ['id' => $surveyor['id']]) }}"
-                            class="btn bg-primary text-white">{{ $surveyor['id'] }}</a>
+                        <a href="{{ route('surveyor.show', ['id' => $surveyor->getId()]) }}"
+                            class="btn bg-primary text-white">{{ $surveyor->getId() }}</a>
                     </div>
                 </div>
             </div>
