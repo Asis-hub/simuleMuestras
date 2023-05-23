@@ -23,6 +23,21 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function store(Request $request)
+    {
+        $request->validate([
+        "name" => "required|max:255",
+        "email" => "required|max:255",
+        "password" => "required|max:255",
+        ]);
+        $newProduct = new User();
+        $newProduct->setName($request->input('name'));
+        $newProduct->setName($request->input('email'));
+        $newProduct->setName($request->input('password'));
+        $newProduct->save();
+        return back();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
