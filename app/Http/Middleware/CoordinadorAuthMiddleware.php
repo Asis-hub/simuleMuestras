@@ -19,8 +19,8 @@ class CoordinadorAuthMiddleware
     {
         if (Auth::user() && Auth::user()->getRole() == 'coordinador') {
             return $next($request);
-            } else {
+        } else {
             return redirect()->route('home.index');
-            }
+        }
     }
 }
