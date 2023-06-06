@@ -15,6 +15,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary py-4">
         <div class="container">
             <a class="navbar-brand" href="{{ route('home.index') }}">SIMULE</a>
+            <img class="logo" src="/images/d79a16b61de6b8760e0f8ed6c43ec2c0.png" alt="CEOA"  style="max-height: 40px;"></h1>
+      <a href="/">
+        <span class="left"></span>
+      </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/acercade','App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
-Route::get('/calculate-formula', 'App\Http\Controllers\SurveyorController@calculateFormula')->name("surveyor.index");
 
 
 Auth::routes();
