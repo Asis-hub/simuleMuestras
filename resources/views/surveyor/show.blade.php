@@ -7,10 +7,39 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">
-                        {{ $viewData['surveyor']->getId() }} (${{ $viewData['surveyor']->getId() }})
-                    </h5>
-                    <p class="card-text">{{ $viewData['surveyor']->getId() }}</p>
+                <h5 class="card-title">
+    Reporte encuestadores ID: {{ $viewData['surveyor']->getId() }}
+</h5>
+<div class="row">
+    <div class="col">
+        <strong>Error:</strong> {{ $viewData['surveyor']->getError() }}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <strong>Proporción Necesaria:</strong> {{ $viewData['surveyor']->getProporcionNecesaria() }}
+    </div>
+    <div class="col">
+        <strong>Proporción Restante:</strong> {{ $viewData['surveyor']->getProporcionRestante() }}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <strong>Estratos:</strong> {{ $viewData['surveyor']->getEstratos() }}
+    </div>
+    <div class="col">
+        <strong>Encuestadores:</strong> {{ $viewData['surveyor']->getEncuestadores() }}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <strong>Creación:</strong> {{ $viewData['surveyor']->getCreatedAt() }}
+    </div>
+    <div class="col">
+        <strong>Última modificación:</strong> {{ $viewData['surveyor']->getUpdatedAt() }}
+    </div>
+</div>
+
                 </div>
             </div>
         </div>
