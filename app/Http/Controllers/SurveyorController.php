@@ -7,6 +7,7 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Http\JsonResponse;
 
+
 class SurveyorController extends Controller
 {
     public function index()
@@ -74,4 +75,33 @@ public function calculateFormula(Request $request)
 
     return new JsonResponse($response);
 }
+
+public function store(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'lb_error' => 'required|numeric',
+            'lb_confiabilidad' => 'required|numeric',
+            'lb_p_necesaria' => 'required|numeric',
+            'lb_p_restante' => 'required|numeric',
+            'lb_estratos' => 'required|numeric',
+            'lb_respuesta' => 'required|numeric',
+        ]);
+
+        // Store the data in the database or perform any desired operations
+        // You can access the validated data using $validatedData array
+
+        // Example: Store the data in a Surveyor model
+        $surveyor = new Surveyor();
+        $surveyor->error = $validatedData['lb_error'];
+        $surveyor->confiabilidad = $validatedData['lb_confiabilidad'];
+        $surveyor->proporcion_necesaria = $validatedData['lb_p_necesaria'];
+        $surveyor->proporcion_restante = $validatedData['lb_p_restante'];
+        $surveyor->estratos = $validatedData['lb_estratos'];
+        $surveyor->encuestadores = $validatedData['lb_respuesta'];
+        $surveyor->save();
+
+        // Return a response or redirect to another page
+        return response()->json(['message' => 'Data stored successfully']);
+    }
 }

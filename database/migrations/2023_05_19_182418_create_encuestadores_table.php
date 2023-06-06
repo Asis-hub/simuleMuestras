@@ -1,34 +1,44 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-return new class extends Migration
+
+class ModifySurveyorsTable extends Migration
 {
-/**
-* Run the migrations.
-*
-* @return void
-*/
-public function up()
-{
-    Schema::create('surveyors', function (Blueprint $table) {
-        $table->id();
-        $table->decimal('error', $precision = 8, $scale = 2);
-        $table->decimal('confiabilidad', $precision = 8, $scale = 2);
-        $table->decimal('proporcion_necesaria', $precision = 8, $scale = 2);
-        $table->decimal('proporcion_restante', $precision = 8, $scale = 2);
-        $table->decimal('estratos', $precision = 8, $scale = 2);
-        $table->decimal('encuestadores', $precision = 8, $scale = 2);
-        $table->timestamps();
-    });
-}
-/**
-* Reverse the migrations.
-*
-* @return void
-*/
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('surveyors', function (Blueprint $table) {
+            $table->float('error');
+            $table->float('confiabilidad');
+            $table->float('proporcion_necesaria');
+            $table->float('proporcion_restante');
+            $table->integer('estratos');
+            $table->float('encuestadores');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('surveyors');
+        Schema::table('surveyors', function (Blueprint $table) {
+            $table->dropColumn('error');
+            $table->dropColumn('confiabilidad');
+            $table->dropColumn('p_necesaria');
+            $table->dropColumn('p_restante');
+            $table->dropColumn('estratos');
+         $table->dropColumn('respuesta');
+         
+        });
     }
-};
+}
