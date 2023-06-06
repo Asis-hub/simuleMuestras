@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
-Route::get('/acercade', 'App\Http\Controllers\HomeController@about')->name("home.about");
+Route::get('/','App\Http\Controllers\HomeController@index')->name("home.index");
+Route::get('/acercade','App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
-Route::get('/nuevo', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.form");
-Route::post('/reportesencuestadores/store', 'App\Http\Controllers\Admin\AdminUserController@store')->name("surveyor.form");
+Route::get('/calculate-formula', 'App\Http\Controllers\SurveyorController@calculateFormula')->name("surveyor.index");
+
 
 Auth::routes();
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
-    Route::get('/admin/users', 'App\Http\Controllers\Admin\AdminUserController@index')->name("admin.user.index");
-    Route::post('/admin/users/store', 'App\Http\Controllers\Admin\AdminUserController@store')->name("admin.user.store");
+    Route::get('/admin/users','App\Http\Controllers\Admin\AdminUserController@index')->name("admin.user.index");
+    Route::post('/admin/users/store','App\Http\Controllers\Admin\AdminUserController@store')->name("admin.user.store");
 });

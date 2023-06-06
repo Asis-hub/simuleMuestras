@@ -40,15 +40,13 @@
                     </ul>
                 @endif
                 
-                <form id="formulario" action="/python/cgi-enabled/formula_muestra.py" method="POST">
-                 @method('PUT')                    
-                    @csrf
+                <form id="formulario">
                     <div class="row">
                         <div class="col">
                             <div class="mb-3 row">
                                 <label class="col-form-label">Error:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="lb_error" value="{{ old('lb_error') }}" type="text" class="form-control">
+                                    <input name="lb_error" id="lb_error" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -56,7 +54,7 @@
                             <div class="mb-3 row">
                                 <label class="col-form-label">Confiabilidad:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="lb_confiabilidad" value="{{ old('lb_confiabilidad') }}" type="text" class="form-control">
+                                    <input name="lb_confiabilidad" id="lb_confiabilidad" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -64,7 +62,7 @@
                             <div class="mb-3 row">
                                 <label class="col-form-label">Proporción necesaria:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="lb_p_necesaria" value="{{ old('lb_p_necesaria') }}" type="text" class="form-control">
+                                    <input name="lb_p_necesaria" id="lb_p_necesaria" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -72,7 +70,7 @@
                             <div class="mb-3 row">
                                 <label class="col-form-label">Proporción restante:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="lb_p_restante" value="{{ old('lb_p_restante') }}" type="text" class="form-control">
+                                    <input name="lb_p_restante" id="lb_p_restante" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +78,7 @@
                             <div class="mb-3 row">
                                 <label class="col-form-label">Número de estratos:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <input name="lb_estratos" value="{{ old('lb_estratos') }}" type="text" class="form-control">
+                                    <input name="lb_estratos" id="lb_estratos" type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -91,8 +89,7 @@
                             <div class="mb-3 row">
                                 <label class="col-form-label">Número de encuestadores:</label>
                                 <div class="col-lg-10 col-md-6 col-sm-12">
-                                    <output class="resultadoCantidad" id="lb_respuesta" name ="respuesta" for="lb_respuesta"></output>
-                                </div>
+                                    <output id="lb_respuesta" name ="respuesta" for="lb_respuesta"></output>
                             </div>
                         </div>
             </div>
@@ -103,36 +100,39 @@
     <script>
         $(document).ready(function() {
             $('#send').click(function() {
-                var error = $('[name="lb_error"]').val();
-                var confiabilidad = $('[name="lb_confiabilidad"]').val();
-                var p_necesaria = $('[name="lb_p_necesaria"]').val();
-                var p_restante = $('[name="lb_p_restante"]').val();
-                var estratos = $('[name="lb_estratos"]').val();
+                const error = $('[name=lb_error]').val();
+                const confiabilidad = $('[name=lb_confiabilidad]').val();
+                const p_necesaria = $('[name=lb_p_necesaria]').val();
+                const p_restante = $('[name=lb_p_restante]').val();
+                const estratos = $('[name=lb_estratos]').val();
+                console.log(error);
+                console.log(confiabilidad);
+                console.log(p_necesaria);
+                console.log(p_restante);
+                console.log(estratos);
 
                 $.ajax({
-                    type: "POST",
-                    url: "{{ route('surveyor.calculate') }}",
+                    url: '/calculate-formula', // Updated URL
+                    method: 'get',
                     data: {
-                        lb_error: error,
-                        lb_confiabilidad: confiabilidad,
-                        lb_p_necesaria: p_necesaria,
-                        lb_p_restante: p_restante,
-                        lb_estratos: estratos
+                        error_py: error,
+                        confiabilidad_py: confiabilidad,
+                        p_necesaria_py: p_necesaria,
+                        p_restante_py: p_restante,
+                        estratos_py: estratos
                     },
-                    success: function(response) {
-                        if (response.result) {
-                            $('.resultadoCantidad').text(response.result);
-                        } else {
-                            alert(response.error);
-                        }
-                    },
-                    error: function() {
-                        alert('An error occurred while making the AJAX request.');
-                    }
+                    dataType: 'text', // Change the data type to 'text'
+            success: function(response) {
+                const resultado = JSON.parse(response);
+
+                console.log(resultado);
+                $("#lb_respuesta").html(resultado);
+            }
                 });
             });
         });
     </script>
+
 @endsection
 </body>
 
