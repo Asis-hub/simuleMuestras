@@ -17,6 +17,7 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index")
 Route::get('/acercade', 'App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
 Route::get('/nuevo', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.form");
+Route::post('/reportesencuestadores/store', 'App\Http\Controllers\Admin\AdminUserController@store')->name("surveyor.form");
 
 Auth::routes();
 

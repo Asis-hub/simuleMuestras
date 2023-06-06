@@ -96,42 +96,44 @@
                             </div>
                         </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-                        
-
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#send').click(function() {
+                var error = $('[name="lb_error"]').val();
+                var confiabilidad = $('[name="lb_confiabilidad"]').val();
+                var p_necesaria = $('[name="lb_p_necesaria"]').val();
+                var p_restante = $('[name="lb_p_restante"]').val();
+                var estratos = $('[name="lb_estratos"]').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('surveyor.calculate') }}",
+                    data: {
+                        lb_error: error,
+                        lb_confiabilidad: confiabilidad,
+                        lb_p_necesaria: p_necesaria,
+                        lb_p_restante: p_restante,
+                        lb_estratos: estratos
+                    },
+                    success: function(response) {
+                        if (response.result) {
+                            $('.resultadoCantidad').text(response.result);
+                        } else {
+                            alert(response.error);
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred while making the AJAX request.');
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
-
-<script>
-$(document).ready(function(){
-  $('#send').click(function(){
-
-    const error = $('[name=lb_error').val();
-      const confiabilidad = $('[name=lb_confiabilidad').val();
-      const p_necesaria = $('[name=lb_p_necesaria').val();
-      const p_restante = $('[name=lb_p_restante').val();
-      const estratos = $('[name=lb_estratos').val();
-
-        $.ajax({
-          url : '/python/cgi-enabled/formula_muestra.py',
-          method : 'get',
-          data : {error_py : error, confiabilidad_py : confiabilidad, p_necesaria_py : p_necesaria, 
-          p_restante_py : p_restante, estratos_py : estratos},
-          dataType : 'text',
-          success : function(data)
-          {
-            $("#lb_respuesta").html(data)
-            console.log(data)
-          }
-      });    
-});
-});
-</script>
 </body>
 
 
