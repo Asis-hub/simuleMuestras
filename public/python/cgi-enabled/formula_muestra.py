@@ -16,7 +16,13 @@ import numpy as np
 
 form = cgi.FieldStorage()
 
-e = float(form["error_py"].value)
+#e = error,
+#z = confiabilidad
+#p = p_necesaria
+#q = p_restante
+#n = estratos
+
+e = float(form["error_py"].value) 
 z = float(form["confiabilidad_py"].value)
 p = float(form["p_necesaria_py"].value)
 q = float(form["p_restante_py"].value)
@@ -32,4 +38,4 @@ resultado = int(np.ceil(numerador/denominador))
 text = json.dumps(resultado)
 
 
-print (text)
+print(text)
