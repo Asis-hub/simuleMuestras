@@ -96,6 +96,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col">
+                            <div class="mb-3 row">
+                            <button type="button" class="store-button" id="store-button">Registrar resultado</button>
+                            </div>
+                        </div>
                     </div>
                     </form>
                     <script>
@@ -127,6 +132,43 @@
                             });
                         });
                     </script>
+                    <script>
+    $(document).ready(function() {
+        $('#store-button').click(function() {
+            const error = $('[name=lb_error]').val();
+            const confiabilidad = $('[name=lb_confiabilidad]').val();
+            const p_necesaria = $('[name=lb_p_necesaria]').val();
+            const p_restante = $('[name=lb_p_restante]').val();
+            const estratos = $('[name=lb_estratos]').val();
+            const lb_respuesta = $('#lb_respuesta').text();
+
+            $.ajax({
+                url: '{{ route('surveyor.store') }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    lb_error: error,
+                    lb_confiabilidad: confiabilidad,
+                    lb_p_necesaria: p_necesaria,
+                    lb_p_restante: p_restante,
+                    lb_estratos: estratos,
+                    lb_respuesta: lb_respuesta
+                },
+                dataType: 'json',
+                success: function(response) {
+                    // Handle the response from the server
+                    console.log(response);
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    // Handle any error that occurs during the AJAX request
+                    console.log(textStatus);
+                }
+            });
+        });
+    });
+</script>
+
+
     </body>
 
     </html>
