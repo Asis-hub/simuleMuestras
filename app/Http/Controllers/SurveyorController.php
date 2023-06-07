@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Illuminate\Http\JsonResponse;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SurveyorExport;
+use Carbon\Carbon;
+use App\Http\Controllers\Controller;
+
 
 
 class SurveyorController extends Controller
@@ -104,4 +109,23 @@ public function store(Request $request)
         // Return a response or redirect to another page
         return response()->json(['message' => 'Data stored successfully']);
     }
+
+    public function editFields($id)
+    {
+        $surveyor = Surveyor::findOrFail($id);
+
+        // Perform any necessary logic for editing the fields
+
+        return view('surveyor.edit', compact('surveyor'));
+    }
+
+    public function exportToExcel($id)
+{
+    $surveyor = Surveyor::findOrFail($id);
+    $fileName = 'reporteEncuestadores_' . $surveyor->getId() . '_' . Carbon::parse($surveyor->getCreatedAt())->format('Ymd_His') . '.xlsx';
+
+    return Excel::download(new SurveyorExport($surveyor), $fileName);
+}
+
+
 }
