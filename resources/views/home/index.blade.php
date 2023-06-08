@@ -6,7 +6,7 @@
             <a class="nav-link active" href="{{ route('surveyor.index') }}">Reporte de calculo de encuestadores</a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
-            Botón 2 - Placeholder
+            <a class="nav-link active" href="{{ route('listaporgenero.index') }}">Cálculo de lista nominal por género</a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             Botón 3 - Placeholder

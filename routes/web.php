@@ -20,6 +20,7 @@ Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorCont
 Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show')->name("surveyor.show");
 Route::get('/encuestadores/export/{id}', 'SurveyorController@exportToExcel')->name('surveyor.export');
 Route::get('/encuestadores/edit/{id}', 'SurveyorController@editFields')->name('surveyor.edit');
+Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
 
 
 Auth::routes();
