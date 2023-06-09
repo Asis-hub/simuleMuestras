@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <a href="{{ route('surveyor.show', ['id' => $surveyor->getId()]) }}"
-                                class="btn bg-primary text-white">Reporte de encuestadores:
+                                class="btn bg-primary text-white">Cálculo de cuotas:
                                 {{ $surveyor->getCreatedAt() }}</a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
         <div class="card">
             <div class="card mb-4">
                 <div class="card-header">
-                    Crear nuevo reporte de muestras
+                    Crear nuevo reporte de cuotas
                 </div>
                 <div class="card-body">
                     @if ($errors->any())
@@ -93,7 +93,7 @@
                             <div class="col">
                                 <div class="mb-3 row">
                                     <button type="button" class="send" id="send">
-                                        Generar
+                                        Cálcular nuevo de encuestadores
                                     </button>
                                     <label class="col-form-label">Número de encuestadores:</label>
                                     <div class="col-lg-10 col-md-6 col-sm-12">

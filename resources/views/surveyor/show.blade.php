@@ -43,10 +43,10 @@
 
                     <div class="row mt-4">
                         <div class="col">
-                            <a href="{{ route('surveyor.export', $viewData['surveyor']->getId()) }}" class="btn btn-primary">Export to Excel</a>
+                            <a href="{{ route('surveyor.export', $viewData['surveyor']->getId()) }}" class="btn btn-primary">Exportar a Excel</a>
                         </div>
                         <div class="col">
-                            <a href="{{ route('surveyor.edit', $viewData['surveyor']->getId()) }}" class="btn btn-primary">Edit Fields</a>
+                            <a href="{{ route('surveyor.edit', $viewData['surveyor']->getId()) }}" class="btn btn-primary">Editar campos</a>
                         </div>
                     </div>
                 </div>

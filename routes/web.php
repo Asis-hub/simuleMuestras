@@ -21,6 +21,7 @@ Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show'
 Route::get('/encuestadores/export/{id}', 'SurveyorController@exportToExcel')->name('surveyor.export');
 Route::get('/encuestadores/edit/{id}', 'SurveyorController@editFields')->name('surveyor.edit');
 Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
+Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
 
 
 Auth::routes();

@@ -3,16 +3,18 @@
 @section('content')
     <div class="row">
         <div class="col-md-6 col-lg-4 mb-2">
-            <a class="nav-link active" href="{{ route('surveyor.index') }}">Reporte de calculo de encuestadores</a>
+            <a class="nav-link active" href="{{ route('surveyor.index') }}">Cálculo de cuotas</a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
             <a class="nav-link active" href="{{ route('listaporgenero.index') }}">Cálculo de lista nominal por género</a>
         </div>
         <div class="col-md-6 col-lg-4 mb-2">
-            Botón 3 - Placeholder
+            <a class="nav-link active" href="{{ route('listaporedad.index') }}">Cálculo de lista nominal por rango de edad</a>
         </div>
+    </div>
+    <div class="row">
         <div class="col-md-6 col-lg-4 mb-2">
-            Botón 4 - Placeholder
+            <a class="nav-link active" href="{{ route('listaporedad.index') }}">Cálculo de lista nominal por rango de edad</a>
         </div>
     </div>
 @endsection
