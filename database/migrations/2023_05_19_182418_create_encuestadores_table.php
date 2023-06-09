@@ -20,6 +20,7 @@ class ModifySurveyorsTable extends Migration
             $table->float('proporcion_restante');
             $table->integer('estratos');
             $table->float('encuestadores');
+            $table->string('autor');
             $table->timestamps();
         });
     }
@@ -38,6 +39,7 @@ class ModifySurveyorsTable extends Migration
             $table->dropColumn('p_restante');
             $table->dropColumn('estratos');
          $table->dropColumn('respuesta');
+         $table->dropColumn('autor');
          
         });
     }

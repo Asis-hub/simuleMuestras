@@ -40,6 +40,11 @@
                             <strong>Última modificación:</strong> {{ $viewData['surveyor']->getUpdatedAt() }}
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <strong>Autor:</strong> {{ $viewData['surveyor']->getAutor() }}
+                        </div>
+                    </div>
 
                     <div class="row mt-4">
                         <div class="col">

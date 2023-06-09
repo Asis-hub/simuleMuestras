@@ -81,4 +81,12 @@ class Surveyor extends Model
     {
         $this->attributes['updated_at'] = $updatedAt;
     }
+    public function getAutor()
+    {
+        return $this->attributes['autor'];
+    }
+    public function setAutor($autor)
+    {
+        $this->attributes['autor'] = $autor;
+    }
 }

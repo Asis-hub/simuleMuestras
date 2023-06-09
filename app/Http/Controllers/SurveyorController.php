@@ -92,6 +92,10 @@ public function store(Request $request)
             'lb_estratos' => 'required|numeric',
             'lb_respuesta' => 'required|numeric',
         ]);
+        if (auth()->check()) {
+            $user = auth()->user();
+            $userName = $user->name;
+        }
 
         // Store the data in the database or perform any desired operations
         // You can access the validated data using $validatedData array
@@ -104,6 +108,7 @@ public function store(Request $request)
         $surveyor->proporcion_restante = $validatedData['lb_p_restante'];
         $surveyor->estratos = $validatedData['lb_estratos'];
         $surveyor->encuestadores = $validatedData['lb_respuesta'];
+        $surveyor->autor = $userName;
         $surveyor->save();
 
         // Return a response or redirect to another page
