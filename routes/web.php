@@ -22,7 +22,7 @@ Route::get('/encuestadores/export/{id}', 'SurveyorController@exportToExcel')->na
 Route::get('/encuestadores/edit/{id}', 'SurveyorController@editFields')->name('surveyor.edit');
 Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
 Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
-
+Route::get('/muestraestratificada', 'App\Http\Controllers\MuestraEstratificadaController@index')->name("muestraestratificada.index");
 
 Auth::routes();
 
