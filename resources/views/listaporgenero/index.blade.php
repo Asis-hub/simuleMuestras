@@ -16,6 +16,19 @@
   </head>
   <body>
 
+  <div class="row">
+            @foreach ($viewData['lista_por_generos'] as $listaporgenero)
+                <div class="col-md-4 col-lg-3 mb-2">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <a href="{{ route('listaporgenero.show', ['id' => $listaporgenero->getId()]) }}"
+                                class="btn bg-primary text-white">Cálculo de lista nominal por géneroc:
+                                {{ $listaporgenero->getCreatedAt() }}</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
   
     <form id="formulario" action="/python/cgi-enabled/calculo_listanominal.py" method="POST">
     @method('PUT')
@@ -2702,9 +2715,14 @@
 
 </li>
   </ul>
+
+  <div class="col">
+   <div class="mb-3 row">
+   <button type="button" class="store-button" id="store-button">Registrar resultado</button>
+  </div>
+ </div>
       
 </form>
-
 
 <script>
         function showSelect() {
@@ -3913,6 +3931,48 @@
         }
       </script>
 
+<script>
+                        $(document).ready(function() {
+                            $('#store-button').click(function() {
+                                const municipio = document.getElementById("lb_municipio").innerHTML;
+                                const entidad = document.getElementById("lb_entidad").innerHTML;
+                                const URL_lista_nominal = $('[name=lb_URL_ListaNominal').val();
+                                const ListaNominalCalculada = $('#lb_ListaNominalCalculada').val();
+                                const ListaNominalMujeres = $('#lb_ListaNominalMujeres').val();
+                                const ListaNominalHombres = $('#lb_ListaNominalHombres').val();
+                                console.log(municipio);
+                                console.log(entidad);
+                                console.log(URL_lista_nominal);
+                                console.log(ListaNominalCalculada);
+                                console.log(ListaNominalMujeres);
+                                console.log(ListaNominalHombres);
+                                $.ajax({
+                                    url: '{{ route('listaporgenero.store') }}',
+                                    method: 'POST',
+                                    data: {
+                                        _token: '{{ csrf_token() }}',
+                                        lb_municipio: municipio,
+                                        lb_entidad: entidad,
+                                        lb_URL_ListaNominal: URL_lista_nominal,
+                                        lb_ListaNominalCalculada: ListaNominalCalculada,
+                                        lb_ListaNominalMujeres: ListaNominalMujeres,
+                                        lb_ListaNominalHombres: ListaNominalHombres
+                                    },
+                                    dataType: 'json',
+                                    success: function(response) {
+                                        // Handle the response from the server
+                                        console.log(response);
+                                    },
+                                    error: function(xhr, textStatus, errorThrown) {
+                                        // Handle any error that occurs during the AJAX request
+                                        console.log(textStatus);
+                                        console.log(errorThrown);
+                                        console.log(response);
+                                    }
+                                });
+                            });
+                        });
+                    </script> 
 
 <script>
 $(document).ready(function(){
@@ -3921,8 +3981,6 @@ $(document).ready(function(){
       const municipio = document.getElementById("lb_municipio").innerHTML;
       const entidad = document.getElementById("lb_entidad").innerHTML;
       const URL_lista_nominal = $('[name=lb_URL_ListaNominal').val();
-      console.log({entidad})
-      console.log({municipio})
       console.log({lb_entidad})
       console.log({lb_municipio})
 

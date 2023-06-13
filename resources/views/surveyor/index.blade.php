@@ -169,6 +169,7 @@
                                     error: function(xhr, textStatus, errorThrown) {
                                         // Handle any error that occurs during the AJAX request
                                         console.log(textStatus);
+                                        console.log(errorThrown);
                                     }
                                 });
                             });

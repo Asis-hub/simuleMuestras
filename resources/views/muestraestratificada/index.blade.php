@@ -65,15 +65,21 @@
   </head>
   <body>
     
-    <form id="formulario" action="/python/cgi-enabled/formula_MAS_dinamica.py" method="POST"> @method('PUT') <h2>Cálculo de MAS - muestra aleatoria simple</h2>
-    <li>
-      <span>B:</span>
-      <input id="lb_B" name="lb_B" type="text" required="required" >
-
-      <span>Confianza Z2:</span>
-      <input id="lb_confianza_Z2" name="lb_confianza_Z2" type="text" required="required" >
-</li>
-
+    <form id="formulario" action="/python/cgi-enabled/formula_MAS_dinamica.py" method="POST"> @method('PUT')
+    <div class="row">
+      <div class="mb-3 row">
+      <label class="col-form-label">B:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+          <input id="lb_B" name="lb_B" type="text" required="required" >
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">Confianza Z2:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+          <input id="lb_confianza_Z2" name="lb_confianza_Z2" type="text" required="required" >
+        </div>
+      </div>
+    </div>
 <br>
     
     <label for="numInputs">Número de estratos:</label>
@@ -224,38 +230,6 @@
         });
       });
     </script>
-    <style>
-.titulo {
-      color: #009E60;
-}
-.titulo2 {
-      font-weight: bold;
-}
-.mujeres {
-      color: #DC143C;
-      font-weight: bold;
-}
-.hombres {
-      color: #1434A4;
-      font-weight: bold;
-}
-
-.listatotal{
-      font-weight: bold;
-      background-color: green;
-      color: white;
-      font-size: 20px;
-      
-}
-.h2 {
-      color: #009E60;
-      font-weight: bold;
-}
-.resultadoCantidad {
-  font-weight: bold;
-  font-size: 18px;
-}
-</style>
   </body>
 </html>
 @endsection

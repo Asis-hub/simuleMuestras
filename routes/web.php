@@ -16,15 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/acercade','App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
-Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorController@store')->name("surveyor.store");
+//Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorController@store')->name("surveyor.store");
 Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show')->name("surveyor.show");
 Route::get('/encuestadores/export/{id}', 'SurveyorController@exportToExcel')->name('surveyor.export');
 Route::get('/encuestadores/edit/{id}', 'SurveyorController@editFields')->name('surveyor.edit');
 Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
+Route::post('/listaporgenero/guardar', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.store");
 Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
 Route::get('/muestraestratificada', 'App\Http\Controllers\MuestraEstratificadaController@index')->name("muestraestratificada.index");
+Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
-Auth::routes();
+Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Auth::routes(['register' => true]);
+Route::middleware(['auth'])->group(function () {
+    Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorController@store')->name("surveyor.store");
+});
+
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
