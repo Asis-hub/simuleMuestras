@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        Reporte encuestadores ID: {{ $viewData['surveyor']->getId() }}
+                        Reporte de cuotas # {{ $viewData['surveyor']->getId() }}
                     </h5>
                     <div class="row">
                         <div class="col">

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('entidad');
             $table->string('municipio');
             $table->string('url_lista_por_genero');
-            $table->string('lista_mujeres');
-            $table->string('lista_hombres');
-            $table->string('lista_total');
+            $table->float('lista_mujeres');
+            $table->float('lista_hombres');
+            $table->float('lista_total');
             $table->string('autor');
             $table->timestamps();
         });

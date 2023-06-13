@@ -33,13 +33,7 @@
     <form id="formulario" action="/python/cgi-enabled/calculo_listanominal.py" method="POST">
     @method('PUT')
     @csrf
-    <div class="card-header">
-
-      Lista Nominal por género
-    </div>
     <div class="card-body">
-    
-
 <label for="entidades">Elija la entidad y/o el municipio a consultar:</label>
 
 <label for="lb_entidad" id="lb_entidad"></label>
@@ -3967,7 +3961,6 @@
                                         // Handle any error that occurs during the AJAX request
                                         console.log(textStatus);
                                         console.log(errorThrown);
-                                        console.log(response);
                                     }
                                 });
                             });

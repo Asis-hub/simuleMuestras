@@ -119,73 +119,70 @@
         <!-- Campos de entrada se añadirán aquí -->
       </div>
       <button type="button" class="send" id="send"> Generar </button>
-      <li>
-      <span class="h2">Ni total:</span>
 
-      <output class="resultadoCantidad" id="lb_NiTotal" name="lb_NiTotal" for="lb_NiTotal">
       
-    </li>
-
-    <li>
-      <span class="h2">Ni*raiz total:</span>
-
-      <output class="resultadoCantidad" id="lb_ni_raiz_total" name="lb_ni_raiz_total" for="lb_ni_raiz_total">
-</li>
-
-<li>
-      <span class="h2">Numerador:</span>
-
-      <output class="resultadoCantidad" id="lb_numerador" name="lb_numerador" for="lb_numerador">
-</li>
-
-<li>
-      <span class="h2">B2:</span>
-
-      <output class="resultadoCantidad" id="lb_B_cuadrada" name="lb_B_cuadrada" for="lb_B_cuadrada">
-</li>
-
-<li>
-      <span class="h2">D:</span>
-
-      <output class="resultadoCantidad" id="lb_D" name="lb_D" for="lb_D">
-</li>
-
-<li>
-      <span class="h2">Ni*pi*qi - Total:</span>
-
-      <output class="resultadoCantidad" id="lb_ni_pi_qi_total" name="lb_ni_pi_qi_total" for="lb_ni_pi_qi_total">
-</li>
-
-<li>
-      <span class="h2">N2:</span>
-
-      <output class="resultadoCantidad" id="lb_ni_cuadrada" name="lb_ni_cuadrada" for="lb_ni_cuadrada">
-</li>
-
-<li>
-      <span class="h2">Denominador:</span>
-
-      <output class="resultadoCantidad" id="lb_denominador" name="lb_denominador" for="lb_denominador">
-</li>
-
-<li>
-      <span class="h2">n (redondeado):</span>
-
-      <output class="resultadoCantidad" id="lb_n_redondeado" name="lb_n_redondeado" for="lb_n_redondeado">
-</li>
-
-<li>
-      <span class="h2">n:</span>
-
-      <output class="resultadoCantidad" id="lb_n" name="lb_n" for="lb_n">
-</li>
-
-<li>
-      <span class="h2">ni - Total:</span>
-
-      <output class="resultadoCantidad" id="lb_ni_total" name="lb_ni_total" for="lb_ni_total">
-</li>
-
+      <div class="row">
+      <div class="mb-3 row">
+      <label class="col-form-label">Ni total:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_NiTotal" name="lb_NiTotal" for="lb_NiTotal">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">Ni*raiz total:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_ni_raiz_total" name="lb_ni_raiz_total" for="lb_ni_raiz_total">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">Numerador:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_numerador" name="lb_numerador" for="lb_numerador">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">B2:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_B_cuadrada" name="lb_B_cuadrada" for="lb_B_cuadrada">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">Ni*pi*qi - Total:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_ni_pi_qi_total" name="lb_ni_pi_qi_total" for="lb_ni_pi_qi_total">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">N2:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_ni_cuadrada" name="lb_ni_cuadrada" for="lb_ni_cuadrada">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">Denominador</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_denominador" name="lb_denominador" for="lb_denominador">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">n (redondeado):</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_n_redondeado" name="lb_n_redondeado" for="lb_n_redondeado">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">n:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_n" name="lb_n" for="lb_n">
+        </div>
+      </div>
+      <div class="mb-3 row">
+      <label class="col-form-label">ni - Total:</label>
+        <div class="col-lg-10 col-md-6 col-sm-12">
+        <output class="resultadoCantidad" id="lb_ni_total" name="lb_ni_total" for="lb_ni_total">
+        </div>
+      </div>
+    </div>
     </form>
     <div>
     
