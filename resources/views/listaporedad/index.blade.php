@@ -17,6 +17,20 @@
   
   </head>
   <body>
+
+  <div class="row">
+            @foreach ($viewData['lista_por_edads'] as $listaporedad)
+                <div class="col-md-4 col-lg-3 mb-2">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <a href="{{ route('listaporedad.show', ['id' => $listaporedad->getId()]) }}"
+                                class="btn bg-primary text-white">Cálculo de lista nominal por edades:
+                                {{ $listaporedad->getCreatedAt() }}</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     
     <form id="formularioPorEdad" action="/python/cgi-enabled/calculo_listanominal_rangoedad.py" method="POST">
     @method('PUT')
@@ -2910,11 +2924,11 @@
       <output id="lb_encuestadoresHombres_65" for="lb_encuestadoresHombres_65"></output>
 </li>
 
-<li>
-      <button type="button" class="sendExcel" id="sendExcel">
-        Exportar a excel
-    </button>
-</li>
+<div class="col">
+   <div class="mb-3 row">
+   <button type="button" class="store-button" id="store-button">Registrar resultado</button>
+  </div>
+ </div>
 
   </ul>
       
@@ -4266,32 +4280,100 @@ $(document).ready(function(){
 
 </script>
 
+<script>
+                        $(document).ready(function() {
+                            $('#store-button').click(function() {
+                                const municipio = document.getElementById("lb_municipio").innerHTML;
+                                const entidad = document.getElementById("lb_entidad").innerHTML;
+                                const URL_ListaPorEdad = $('[name=lb_URL_ListaPorEdad').val();
+                                const ListaNominalCalculada = $('#lb_ListaNominalCalculada').val();
+                              const ListaNominalMujeres_18_24 = $('#lb_ListaNominalMujeres_18_24').val();
+                              const ListaNominalHombres_18_24 = $('#lb_ListaNominalHombres_18_24').val();
+                              const ListaNominalMujeres_25_34 = $('#lb_ListaNominalMujeres_25_34').val();
+                              const ListaNominalHombres_25_34 = $('#lb_ListaNominalHombres_25_34').val();
+                              const ListaNominalMujeres_35_49 = $('#lb_ListaNominalMujeres_35_49').val();
+                              const ListaNominalHombres_35_49 = $('#lb_ListaNominalHombres_35_49').val();
+                              const ListaNominalMujeres_50_64 = $('#lb_ListaNominalMujeres_50_64').val();
+                              const ListaNominalHombres_50_64 = $('#lb_ListaNominalHombres_50_64').val();
+                              const ListaNominalMujeres_65 = $('#lb_ListaNominalMujeres_65').val();
+                              const ListaNominalHombres_65 = $('#lb_ListaNominalHombres_65').val();
+                              const ProporcionMujeres_18_24 = $('#lb_ProporcionMujeres_18_24').val();
+                              const ProporcionHombres_18_24 = $('#lb_ProporcionHombres_18_24').val();
+                              const ProporcionMujeres_25_34 = $('#lb_ProporcionMujeres_25_34').val();
+                              const ProporcionHombres_25_34 = $('#lb_ProporcionHombres_25_34').val();
+                              const ProporcionMujeres_35_49 = $('#lb_ProporcionMujeres_35_49').val();
+                              const ProporcionHombres_35_49 = $('#lb_ProporcionHombres_35_49').val();
+                              const ProporcionMujeres_50_64 = $('#lb_ProporcionMujeres_50_64').val();
+                              const ProporcionHombres_50_64 = $('#lb_ProporcionHombres_50_64').val();
+                              const ProporcionMujeres_65 = $('#lb_ProporcionMujeres_65').val();
+                              const ProporcionHombres_65 = $('#lb_ProporcionHombres_65').val();
+                              const EncuestadoresMujeres_18_24 = $('lb_encuestadoresMujeres_18_24').val();
+                              const EncuestadoresHombres_18_24 = $('lb_encuestadoresHombres_18_24').val();
+                              const EncuestadoresMujeres_25_34 = $('lb_encuestadoresMujeres_25_34').val();
+                              const EncuestadoresHombres_25_34 = $('lb_encuestadoresHombres_25_34').val();
+                              const EncuestadoresMujeres_35_49 = $('lb_encuestadoresMujeres_35_49').val();
+                              const EncuestadoresHombres_35_49 = $('lb_encuestadoresHombres_35_49').val();
+                              const EncuestadoresMujeres_50_64 = $('lb_encuestadoresMujeres_50_64').val();
+                              const EncuestadoresHombres_50_64 = $('lb_encuestadoresHombres_50_64').val();
+                              const EncuestadoresMujeres_65 = $('lb_encuestadoresMujeres_65').val();
+                              const EncuestadoresHombres_65 = $('lb_encuestadoresHombres_65').val();
+                                $.ajax({
+                                    url: '{{ route('listaporedad.store') }}',
+                                    method: 'POST',
+                                    data: {
+                                          _token: '{{ csrf_token() }}',
+                                          lb_municipio: municipio,
+                                          lb_entidad: entidad,
+                                          lb_URL_ListaPorEdad: URL_ListaPorEdad,
+                                          lb_ListaNominalCalculada: ListaNominalCalculada,
+                                          lb_ListaNominalMujeres_18_24 : ListaNominalMujeres_18_24,
+                                          lb_ListaNominalHombres_18_24 : ListaNominalHombres_18_24,
+                                          lb_ListaNominalMujeres_25_34 : ListaNominalMujeres_25_34,
+                                          lb_ListaNominalHombres_25_34 : ListaNominalHombres_25_34,
+                                          lb_ListaNominalMujeres_35_49 : ListaNominalMujeres_35_49,
+                                          lb_ListaNominalHombres_35_49 : ListaNominalHombres_35_49,
+                                          lb_ListaNominalMujeres_50_64 : ListaNominalMujeres_50_64,
+                                          lb_ListaNominalHombres_50_64 : ListaNominalHombres_50_64,
+                                          lb_ListaNominalMujeres_65 : ListaNominalMujeres_65,
+                                          lb_ListaNominalHombres_65 : ListaNominalHombres_65,
+                                          lb_ProporcionMujeres_18_24 : ProporcionMujeres_18_24,
+                                          lb_ProporcionHombres_18_24 : ProporcionHombres_18_24,
+                                          lb_ProporcionMujeres_25_34 : ProporcionMujeres_25_34,
+                                          lb_ProporcionHombres_25_34 : ProporcionHombres_25_34,
+                                          lb_ProporcionMujeres_35_49 : ProporcionMujeres_35_49,
+                                          lb_ProporcionHombres_35_49 : ProporcionHombres_35_49,
+                                          lb_ProporcionMujeres_50_64 : ProporcionMujeres_50_64,
+                                          lb_ProporcionHombres_50_64 : ProporcionHombres_50_64,
+                                          lb_ProporcionMujeres_65 : ProporcionMujeres_65,
+                                          lb_ProporcionHombres_65 : ProporcionHombres_65,
+                                          lb_encuestadoresMujeres_18_24 : EncuestadoresMujeres_18_24,
+                                          lb_encuestadoresHombres_18_24 : EncuestadoresHombres_18_24,
+                                          lb_encuestadoresMujeres_25_34 : EncuestadoresMujeres_25_34,
+                                          lb_encuestadoresHombres_25_34 : EncuestadoresHombres_25_34,
+                                          lb_encuestadoresMujeres_35_49 : EncuestadoresMujeres_35_49,
+                                          lb_encuestadoresHombres_35_49 : EncuestadoresHombres_35_49,
+                                          lb_encuestadoresMujeres_50_64 : EncuestadoresMujeres_50_64,
+                                          lb_encuestadoresHombres_50_64 : EncuestadoresHombres_50_64,
+                                          lb_encuestadoresMujeres_65 : EncuestadoresMujeres_65,
+                                          lb_encuestadoresHombres_65 : EncuestadoresHombres_65
+                                    },
+                                    dataType: 'json',
+                                    success: function(response) {
+                                        // Handle the response from the server
+                                        console.log(response);
+                                    },
+                                    error: function(xhr, textStatus, errorThrown) {
+                                        // Handle any error that occurs during the AJAX request
+                                        console.log(textStatus);
+                                        console.log(errorThrown);
+                                    }
+                                });
+                            });
+                        });
+                    </script> 
 
+<script>
 
-
-<style>
-.titulo2 {
-      background-color: #009E60;
-} 
-.h2 {
-      color: #009E60;
-}
-.mujeres {
-      color: #DC143C;
-      font-weight: bold;
-}
-.hombres {
-      color: #1434A4;
-      font-weight: bold;
-}
-
-.listatotal{
-      font-weight: bold;
-      background-color: green;
-      color: white;
-      font-size: 20px;
-}
-</style>
 
   </body>
 </html>
