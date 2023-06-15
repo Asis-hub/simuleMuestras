@@ -52,7 +52,7 @@ class ListaPorGeneroController extends Controller
         $listaporgenero->url_lista_por_genero = $validatedData['lb_URL_ListaNominal'];
         $listaporgenero->lista_mujeres = $validatedData['lb_ListaNominalMujeres'];
         $listaporgenero->lista_hombres = $validatedData['lb_ListaNominalHombres'];
-        $listaporgenero->lista_total = $validatedData['lb_ListaNominalHombres'];
+        $listaporgenero->lista_total = $validatedData['lb_ListaNominalCalculada'];
         $listaporgenero->autor = $userName;
         $listaporgenero->save();
 

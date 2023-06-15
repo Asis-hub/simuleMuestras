@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lista_por_edad', function (Blueprint $table) {
+        Schema::create('lista_por_edads', function (Blueprint $table) {
             $table->id();
             $table->string('entidad');
             $table->string('municipio');
@@ -61,6 +61,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lista_por_edad');
+        Schema::dropIfExists('lista_por_edads');
     }
 };
