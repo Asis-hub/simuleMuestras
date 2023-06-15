@@ -4215,6 +4215,9 @@ $(document).ready(function(){
       });    
 });
 });
+</script>
+<script>
+
 
 $(document).ready(function(){
   $('#sendEncuestadores').click(function(){
@@ -4279,14 +4282,13 @@ $(document).ready(function(){
 });
 
 </script>
-
 <script>
                         $(document).ready(function() {
                             $('#store-button').click(function() {
-                                const municipio = document.getElementById("lb_municipio").innerHTML;
-                                const entidad = document.getElementById("lb_entidad").innerHTML;
-                                const URL_ListaPorEdad = $('[name=lb_URL_ListaPorEdad').val();
-                                const ListaNominalCalculada = $('#lb_ListaNominalCalculada').val();
+                              const entidad = document.getElementById("lb_entidad").innerHTML;
+                              const municipio = document.getElementById("lb_municipio").innerHTML;
+                              const URL_ListaPorEdad = $('[name=lb_URL_ListaPorEdad').val();
+                              const ListaNominalCalculada = $('#lb_ListaNominalCalculada').val();
                               const ListaNominalMujeres_18_24 = $('#lb_ListaNominalMujeres_18_24').val();
                               const ListaNominalHombres_18_24 = $('#lb_ListaNominalHombres_18_24').val();
                               const ListaNominalMujeres_25_34 = $('#lb_ListaNominalMujeres_25_34').val();
@@ -4307,23 +4309,57 @@ $(document).ready(function(){
                               const ProporcionHombres_50_64 = $('#lb_ProporcionHombres_50_64').val();
                               const ProporcionMujeres_65 = $('#lb_ProporcionMujeres_65').val();
                               const ProporcionHombres_65 = $('#lb_ProporcionHombres_65').val();
-                              const EncuestadoresMujeres_18_24 = $('lb_encuestadoresMujeres_18_24').val();
-                              const EncuestadoresHombres_18_24 = $('lb_encuestadoresHombres_18_24').val();
-                              const EncuestadoresMujeres_25_34 = $('lb_encuestadoresMujeres_25_34').val();
-                              const EncuestadoresHombres_25_34 = $('lb_encuestadoresHombres_25_34').val();
-                              const EncuestadoresMujeres_35_49 = $('lb_encuestadoresMujeres_35_49').val();
-                              const EncuestadoresHombres_35_49 = $('lb_encuestadoresHombres_35_49').val();
-                              const EncuestadoresMujeres_50_64 = $('lb_encuestadoresMujeres_50_64').val();
-                              const EncuestadoresHombres_50_64 = $('lb_encuestadoresHombres_50_64').val();
-                              const EncuestadoresMujeres_65 = $('lb_encuestadoresMujeres_65').val();
-                              const EncuestadoresHombres_65 = $('lb_encuestadoresHombres_65').val();
+                              const EncuestadoresMujeres_18_24 = $('#lb_encuestadoresMujeres_18_24').val();
+                              const EncuestadoresHombres_18_24 = $('#lb_encuestadoresHombres_18_24').val();
+                              const EncuestadoresMujeres_25_34 = $('#lb_encuestadoresMujeres_25_34').val();
+                              const EncuestadoresHombres_25_34 = $('#lb_encuestadoresHombres_25_34').val();
+                              const EncuestadoresMujeres_35_49 = $('#lb_encuestadoresMujeres_35_49').val();
+                              const EncuestadoresHombres_35_49 = $('#lb_encuestadoresHombres_35_49').val();
+                              const EncuestadoresMujeres_50_64 = $('#lb_encuestadoresMujeres_50_64').val();
+                              const EncuestadoresHombres_50_64 = $('#lb_encuestadoresHombres_50_64').val();
+                              const EncuestadoresMujeres_65 = $('#lb_encuestadoresMujeres_65').val();
+                              const EncuestadoresHombres_65 = $('#lb_encuestadoresHombres_65').val();
+                              console.log(entidad);
+                              console.log(municipio);
+                              console.log(URL_ListaPorEdad);
+                              console.log(ListaNominalCalculada);
+                              console.log(ListaNominalMujeres_18_24);
+                              console.log(ListaNominalHombres_18_24);
+                              console.log(ListaNominalMujeres_25_34);
+                              console.log(ListaNominalHombres_25_34);
+                              console.log(ListaNominalMujeres_35_49);
+                              console.log(ListaNominalHombres_35_49);
+                              console.log(ListaNominalMujeres_50_64);
+                              console.log(ListaNominalHombres_50_64);
+                              console.log(ListaNominalMujeres_65);
+                              console.log(ListaNominalHombres_65);
+                              console.log(ProporcionMujeres_18_24);
+                              console.log(ProporcionHombres_18_24);
+                              console.log(ProporcionMujeres_25_34);
+                              console.log(ProporcionHombres_25_34);
+                              console.log(ProporcionMujeres_35_49);
+                              console.log(ProporcionHombres_35_49);
+                              console.log(ProporcionMujeres_50_64);
+                              console.log(ProporcionHombres_50_64);
+                              console.log(ProporcionMujeres_65);
+                              console.log(ProporcionHombres_65);
+                              console.log(EncuestadoresMujeres_18_24);
+                              console.log(EncuestadoresHombres_18_24);
+                              console.log(EncuestadoresMujeres_25_34);
+                              console.log(EncuestadoresHombres_25_34);
+                              console.log(EncuestadoresMujeres_35_49);
+                              console.log(EncuestadoresHombres_35_49);
+                              console.log(EncuestadoresMujeres_50_64);
+                              console.log(EncuestadoresHombres_50_64);
+                              console.log(EncuestadoresMujeres_65);
+                              console.log(EncuestadoresHombres_65);
                                 $.ajax({
                                     url: '{{ route('listaporedad.store') }}',
                                     method: 'POST',
                                     data: {
                                           _token: '{{ csrf_token() }}',
-                                          lb_municipio: municipio,
                                           lb_entidad: entidad,
+                                          lb_municipio: municipio,
                                           lb_URL_ListaPorEdad: URL_ListaPorEdad,
                                           lb_ListaNominalCalculada: ListaNominalCalculada,
                                           lb_ListaNominalMujeres_18_24 : ListaNominalMujeres_18_24,
@@ -4371,10 +4407,6 @@ $(document).ready(function(){
                             });
                         });
                     </script> 
-
-<script>
-
-
-  </body>
+</body>
 </html>
 @endsection
