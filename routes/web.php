@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/acercade','App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
-//Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorController@store')->name("surveyor.store");
 Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show')->name("surveyor.show");
 Route::get('/encuestadores/export/{id}', 'SurveyorController@exportToExcel')->name('surveyor.export');
 Route::get('/encuestadores/edit/{id}', 'SurveyorController@editFields')->name('surveyor.edit');
@@ -24,6 +23,8 @@ Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@ind
 Route::post('/listaporgenero/guardar', 'App\Http\Controllers\ListaPorGeneroController@store')->name("listaporgenero.store");
 Route::get('/listaporgenero/{id}', 'App\Http\Controllers\ListaPorGeneroController@show')->name("listaporgenero.show");
 Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
+Route::post('/listaporedad/guardar', 'App\Http\Controllers\ListaPorEdadController@store')->name("listaporedad.store");
+Route::get('/listaporedad/{id}', 'App\Http\Controllers\ListaPorEdadController@show')->name("listaporedad.show");
 Route::get('/muestraestratificada', 'App\Http\Controllers\MuestraEstratificadaController@index')->name("muestraestratificada.index");
 Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
