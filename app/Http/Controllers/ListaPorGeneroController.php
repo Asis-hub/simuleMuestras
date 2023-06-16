@@ -13,14 +13,13 @@ class ListaPorGeneroController extends Controller
         $viewData["title"] = "SIMULE - CEOA";
         $viewData["subtitle"] = "Cálculo de lista nominal por género";
         $viewData["lista_por_generos"] = ListaPorGenero::all();
-        //$viewData["surveyors"] = Surveyor::all();
         return view('listaporgenero.index')->with("viewData", $viewData);
     }
     public function show($id)
     {
         $viewData = [];
         $lista_por_generos = ListaPorGenero::findOrFail($id);
-        $viewData["title"] = $lista_por_generos->getId()." - Reporte de cálculo de lista nominal por genero.";
+        $viewData["title"] = $lista_por_generos->getId()." - Reporte de cálculo de lista nominal por edad.";
         $viewData["subtitle"] = "Detalles";
         $viewData["lista_por_generos"] = $lista_por_generos;
         return view('listaporgenero.show')->with("viewData", $viewData);

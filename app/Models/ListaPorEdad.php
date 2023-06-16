@@ -287,5 +287,29 @@ class ListaPorEdad extends Model
     {
         $this->attributes['encuestadores_hombres_65_mas'] = $encuestadores_hombres_65_mas;
     }
+    public function getAutor()
+    {
+        return $this->attributes['autor'];
+    }
+    public function setAutor($autor)
+    {
+        $this->attributes['autor'] = $autor;
+    }
+    public function getCreatedAt()
+    {
+        return $this->attributes['created_at'];
+    }
+    public function setCreatedAt($createdAt)
+    {
+        $this->attributes['created_at'] = $createdAt;
+    }
+    public function getUpdatedAt()
+    {
+        return $this->attributes['updated_at'];
+    }
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
+    }
     use HasFactory;
 }

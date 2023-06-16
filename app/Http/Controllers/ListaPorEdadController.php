@@ -18,7 +18,7 @@ class ListaPorEdadController extends Controller
     {
         $viewData = [];
         $lista_por_edad = ListaPorEdad::findOrFail($id);
-        $viewData["title"] = $lista_por_edad->getId()." - Reporte de cálculo de lista nominal por genero.";
+        $viewData["title"] = $lista_por_edad->getId()." - Reporte de cálculo de lista nominal por edad.";
         $viewData["subtitle"] = "Detalles";
         $viewData["lista_por_edads"] = $lista_por_edad;
         return view('listaporedad.show')->with("viewData", $viewData);
@@ -45,20 +45,20 @@ class ListaPorEdadController extends Controller
             'lb_ProporcionHombres_18_24' => ['required', 'string', 'max:255'],
             'lb_ProporcionMujeres_25_34' => ['required', 'string', 'max:255'],
             'lb_ProporcionHombres_25_34' => ['required', 'string', 'max:255'],
-            'lb_ProporcionMujeres35_49' => ['required', 'string', 'max:255'],
-            'lb_ProporcionHombres35_49' => ['required', 'string', 'max:255'],
-            'lb_ProporcionMujeres50_64' => ['required', 'string', 'max:255'],
-            'lb_ProporcionHombres50_64' => ['required', 'string', 'max:255'],
+            'lb_ProporcionMujeres_35_49' => ['required', 'string', 'max:255'],
+            'lb_ProporcionHombres_35_49' => ['required', 'string', 'max:255'],
+            'lb_ProporcionMujeres_50_64' => ['required', 'string', 'max:255'],
+            'lb_ProporcionHombres_50_64' => ['required', 'string', 'max:255'],
             'lb_ProporcionMujeres_65' => ['required', 'string', 'max:255'],
             'lb_ProporcionHombres_65' => ['required', 'string', 'max:255'],
             'lb_encuestadoresMujeres_18_24' => ['required', 'string', 'max:255'],
             'lb_encuestadoresHombres_18_24' => ['required', 'string', 'max:255'],
             'lb_encuestadoresMujeres_25_34' => ['required', 'string', 'max:255'],
             'lb_encuestadoresHombres_25_34' => ['required', 'string', 'max:255'],
-            'lb_encuestadoresMujeres35_49' => ['required', 'string', 'max:255'],
-            'lb_encuestadoresHombres35_49' => ['required', 'string', 'max:255'],
-            'lb_encuestadoresMujeres50_64' => ['required', 'string', 'max:255'],
-            'lb_encuestadoresHombres50_64' => ['required', 'string', 'max:255'],
+            'lb_encuestadoresMujeres_35_49' => ['required', 'string', 'max:255'],
+            'lb_encuestadoresHombres_35_49' => ['required', 'string', 'max:255'],
+            'lb_encuestadoresMujeres_50_64' => ['required', 'string', 'max:255'],
+            'lb_encuestadoresHombres_50_64' => ['required', 'string', 'max:255'],
             'lb_encuestadoresMujeres_65' => ['required', 'string', 'max:255'],
             'lb_encuestadoresHombres_65' => ['required', 'string', 'max:255']
         ]);

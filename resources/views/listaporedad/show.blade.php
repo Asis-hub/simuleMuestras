@@ -21,7 +21,7 @@
                             <strong>Municipio:</strong> {{ $viewData['lista_por_edads']->getMunicipio() }}
                         </div>
                         <div class="col">
-                            <strong>URL de lista por género:</strong> {{ $viewData['lista_por_edads']->getUrlListaPorGenero() }}
+                            <strong>URL de lista por edad:</strong> {{ $viewData['lista_por_edads']->getUrlListaPorEdad() }}
                         </div>
                     </div>
                     <div class="row">

@@ -34,6 +34,7 @@
     
     <form id="formularioPorEdad" action="/python/cgi-enabled/calculo_listanominal_rangoedad.py" method="POST">
     @method('PUT')
+    @csrf
     <ul >
     <li>
       <h2 class="h2">Lista nominal por rangos de edad</h2>
@@ -3028,7 +3029,6 @@ document.getElementById("lb_ProporcionHombres_65").innerHTML = "";
             zacatecasSelect.style.display = "none";
             document.getElementById("lb_entidad").innerHTML = entidadesSelect.value;
             document.getElementById("lb_municipio").innerHTML = aguascalientesSelect.value;
-            //lb_municipio.innerHTML = aguascalientesSelect.value;
             
             console.log(lb_municipio.innerHTML)
             console.log(aguascalientesSelect.value)
