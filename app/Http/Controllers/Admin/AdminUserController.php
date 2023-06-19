@@ -22,11 +22,13 @@ class AdminUserController extends Controller
         'name' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         'password' => ['required', 'string', 'min:8', 'confirmed'],
+        'roles' => ['required', 'string', 'max:255']
         ]);
         $newUser = new User();
         $newUser->setName($request->input('name'));
         $newUser->setEmail($request->input('email'));
         $newUser->setPassword(Hash::make($request->input('password')));
+        $newUser->setRole($request->input('roles'));
         $newUser->save();
         return back();
     }

@@ -51,7 +51,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col">
                             <div class="mb-3 row">
                                 <label for="password-confirm"
@@ -61,6 +60,16 @@
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3 row">
+                            <label class="col-form-label">Rol de usuario:</label>
+                            <select name="roles" id="rol-select" onchange="showSelect()">
+                                <option value="auxiliar">Auxiliar</option>
+                                <option value="coordinador">Coordinador</option>
+                                <option value="admin">Administrador</option>
+                            </select>
                             </div>
                         </div>
                     </div>
@@ -77,8 +86,8 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Correo</th>
                     <th scope="col">Editar</th>
                     <th scope="col">Eliminar</th>
                 </tr>

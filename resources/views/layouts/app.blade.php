@@ -25,6 +25,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
+                    @if(auth()->check() && auth()->user()->getRole() === 'admin')
+                    <a class="nav-link active" href="{{ route('admin.home.index') }}">Administrador</a>
+                    @endif
                     <a class="nav-link active" href="{{ route('home.index') }}">Menú principal</a>
                     <a class="nav-link active" href="{{ route('home.about') }}">Acerca de</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
