@@ -19,7 +19,7 @@ class SurveyorController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "SIMULE - CEOA";
-        $viewData["subtitle"] = "Lista de reportes de calculo de encuestadores";
+        $viewData["subtitle"] = "Lista de reportes de calculo de cuotas";
         $viewData["surveyors"] = Surveyor::all();
         return view('surveyor.index')->with("viewData", $viewData);
     }
@@ -27,7 +27,7 @@ class SurveyorController extends Controller
     {
         $viewData = [];
         $surveyor = Surveyor::findOrFail($id);
-        $viewData["title"] = $surveyor->getId()." - Reporte de cálculo de encuestadores";
+        $viewData["title"] = $surveyor->getId()." - Reporte de cálculo de cuotas";
         $viewData["subtitle"] = "Detalles";
         $viewData["surveyor"] = $surveyor;
         return view('surveyor.show')->with("viewData", $viewData);
