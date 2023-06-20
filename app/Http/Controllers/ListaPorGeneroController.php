@@ -72,7 +72,7 @@ class ListaPorGeneroController extends Controller
 
         // Perform any necessary logic for editing the fields
 
-        return view('surveyor.edit', compact('surveyor'));
+        return view('listaporgenero.edit', compact('listaporgenero'));
     }
 
     public function exportToExcel($id)

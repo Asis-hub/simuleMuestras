@@ -21,18 +21,17 @@ Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show'
 Route::get('/encuestadores/export/{id}', 'App\Http\Controllers\SurveyorController@exportToExcel')->name('surveyor.export');
 Route::get('/encuestadores/edit/{id}', 'App\Http\Controllers\SurveyorController@editFields')->name('surveyor.edit');
 
-
 Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
 Route::post('/listaporgenero/guardar', 'App\Http\Controllers\ListaPorGeneroController@store')->name("listaporgenero.store");
 Route::get('/listaporgenero/{id}', 'App\Http\Controllers\ListaPorGeneroController@show')->name("listaporgenero.show");
 Route::get('/listaporgenero/export/{id}', 'App\Http\Controllers\ListaPorGeneroController@exportToExcel')->name('listaporgenero.export');
 Route::get('/listaporgenero/edit/{id}', 'App\Http\Controllers\ListaPorGeneroController@editFields')->name('listaporgenero.edit');
 
-
 Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
 Route::post('/listaporedad/guardar', 'App\Http\Controllers\ListaPorEdadController@store')->name("listaporedad.store");
 Route::get('/listaporedad/{id}', 'App\Http\Controllers\ListaPorEdadController@show')->name("listaporedad.show");
-
+Route::get('/listaporedad/export/{id}', 'App\Http\Controllers\ListaPorEdadController@exportToExcel')->name("listaporedad.export");
+Route::get('/listaporedad/edit/{id}', 'App\Http\Controllers\ListaPorEdadController@editFields')->name("listaporedad.edit");
 
 Route::get('/muestraestratificada', 'App\Http\Controllers\MuestraEstratificadaController@index')->name("muestraestratificada.index");
 

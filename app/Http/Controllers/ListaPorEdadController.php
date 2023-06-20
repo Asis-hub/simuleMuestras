@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 use App\Models\ListaPorEdad;
 use Illuminate\Http\Request;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ListaPorEdadExport;
+use Carbon\Carbon;
+use App\Http\Controllers\Controller;
+
 class ListaPorEdadController extends Controller
 {
     public function index()
@@ -107,5 +112,22 @@ class ListaPorEdadController extends Controller
 
         // Return a response or redirect to another page
         return response()->json(['message' => 'Data stored successfully']);
+    }
+
+    public function editFields($id)
+    {
+        $listaporedad = ListaPorEdad::findOrFail($id);
+
+        // Perform any necessary logic for editing the fields
+
+        return view('listaporedad.edit', compact('listaporedad'));
+    }
+
+    public function exportToExcel($id)
+    {
+        $listaporedad = ListaPorEdad::findOrFail($id);
+        $fileName = 'reporteListaPorRangosEdadGenero_' . $listaporedad->getId() . '_' . Carbon::parse($listaporedad->getCreatedAt())->format('Ymd_His') . '.xlsx';
+    
+        return Excel::download(new ListaPorEdadExport($listaporedad), $fileName);
     }
 }

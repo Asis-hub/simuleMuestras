@@ -167,7 +167,14 @@
                             <strong>Última modificación:</strong> {{ $viewData['lista_por_edads']->getUpdatedAt() }}
                         </div>
                     </div>
-                    
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a href="{{ route('listaporedad.export', $viewData['lista_por_edads']->getId()) }}" class="btn btn-primary">Exportar a Excel</a>
+                        </div>
+                        <div class="col">
+                            <a href="{{ route('listaporedad.edit', $viewData['lista_por_edads']->getId()) }}" class="btn btn-primary">Editar campos</a>
+                        </div>
+                    </div>
 
                     
                 </div>
