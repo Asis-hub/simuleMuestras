@@ -50,7 +50,14 @@
                             <strong>Autor:</strong> {{ $viewData['lista_por_generos']->getAutor() }}
                         </div>
                     </div>
-
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a href="{{ route('listaporgenero.export', $viewData['lista_por_generos']->getId()) }}" class="btn btn-primary">Exportar a Excel</a>
+                        </div>
+                        <div class="col">
+                            <a href="{{ route('listaporgenero.edit', $viewData['lista_por_generos']->getId()) }}" class="btn btn-primary">Editar campos</a>
+                        </div>
+                    </div>
                     
                 </div>
             </div>

@@ -125,12 +125,12 @@ public function store(Request $request)
     }
 
     public function exportToExcel($id)
-{
-    $surveyor = Surveyor::findOrFail($id);
-    $fileName = 'reporteEncuestadores_' . $surveyor->getId() . '_' . Carbon::parse($surveyor->getCreatedAt())->format('Ymd_His') . '.xlsx';
-
-    return Excel::download(new SurveyorExport($surveyor), $fileName);
-}
+    {
+        $surveyor = Surveyor::findOrFail($id);
+        $fileName = 'reporteCuotas_' . $surveyor->getId() . '_' . Carbon::parse($surveyor->getCreatedAt())->format('Ymd_His') . '.xlsx';
+    
+        return Excel::download(new SurveyorExport($surveyor), $fileName);
+    }
 
 
 }

@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\ListaPorGenero;
 use Illuminate\Http\Request;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Illuminate\Http\JsonResponse;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ListaPorGeneroExport;
+use Carbon\Carbon;
+use App\Http\Controllers\Controller;
 
 class ListaPorGeneroController extends Controller
 {
@@ -57,5 +64,22 @@ class ListaPorGeneroController extends Controller
 
         // Return a response or redirect to another page
         return response()->json(['message' => 'Data stored successfully']);
+    }
+
+    public function editFields($id)
+    {
+        $listaporgenero = ListaPorGenero::findOrFail($id);
+
+        // Perform any necessary logic for editing the fields
+
+        return view('surveyor.edit', compact('surveyor'));
+    }
+
+    public function exportToExcel($id)
+    {
+        $listaporgenero = ListaPorGenero::findOrFail($id);
+        $fileName = 'reporteListaPorGenero_' . $listaporgenero->getId() . '_' . Carbon::parse($listaporgenero->getCreatedAt())->format('Ymd_His') . '.xlsx';
+    
+        return Excel::download(new ListaPorGeneroExport($listaporgenero), $fileName);
     }
 }
