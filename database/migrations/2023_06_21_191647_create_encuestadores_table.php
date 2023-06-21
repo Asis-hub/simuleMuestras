@@ -13,8 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('surveyors', function (Blueprint $table) {
+        Schema::create('surveyors', function (Blueprint $table) {
+            $table->id();
+            $table->float('error');
+            $table->float('confiabilidad');
+            $table->float('proporcion_necesaria');
+            $table->float('proporcion_restante');
+            $table->integer('estratos');
+            $table->float('encuestadores');
             $table->string('autor');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('surveyors', function (Blueprint $table) {
-            $table->dropColumn(['autor']);
-        });
+        Schema::dropIfExists('surveyors');
     }
 };
