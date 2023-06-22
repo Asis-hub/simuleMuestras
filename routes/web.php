@@ -47,6 +47,13 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::middleware('coordinador')->group(function () {
+    
+});
+
+Route::middleware('auxiliar')->group(function () {
+    
+});
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
