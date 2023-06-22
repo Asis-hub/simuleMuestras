@@ -32,4 +32,24 @@ class AdminUserController extends Controller
         $newUser->save();
         return back();
     }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($id)],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'roles' => ['required', 'string', 'max:255'],
+        ]);
+    
+        $user = User::findOrFail($id);
+        $user->setName($request->input('name'));
+        $user->setEmail($request->input('email'));
+        $user->setPassword(Hash::make($request->input('password')));
+        $user->setRole($request->input('roles'));
+        $user->save();
+    
+        return redirect()->back();
+    }
+    
 }
