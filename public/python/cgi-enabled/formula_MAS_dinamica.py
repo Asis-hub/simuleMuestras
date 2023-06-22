@@ -120,7 +120,7 @@ for key in ni_keys:
 
 # Recorre la matriz y añade "Estrato i" a cada elemento
 for i, num in enumerate(personal_confianza):
-    personal_confianza[i] = " Estrato " + str(i + 1) + ":" + str(num)
+    personal_confianza[i] = " Estrato " + str(i + 1) + ": " + str(num)
 
 
 
