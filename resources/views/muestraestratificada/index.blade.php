@@ -120,6 +120,9 @@
       </div>
       <button type="button" class="send" id="send"> Generar </button>
 
+
+
+      <!--
       
       <div class="row">
       <div class="mb-3 row">
@@ -170,6 +173,12 @@
         <output class="resultadoCantidad" id="lb_n_redondeado" name="lb_n_redondeado" for="lb_n_redondeado">
         </div>
       </div>
+    
+      !-->
+
+
+
+
       <div class="mb-3 row">
       <label class="col-form-label">n:</label>
         <div class="col-lg-10 col-md-6 col-sm-12">
