@@ -2860,7 +2860,7 @@
 
 <li>
 
-      <h3 class="h2">Numero de encuestadores:</h3>
+      <h3 class="h2">Numero de encuestas:</h3>
 
       <input id="lb_input_numEncuestadores" name="lb_input_numEncuestadores" type="text">
 
@@ -2868,60 +2868,60 @@
 
 <li>
       <button type="button" class="sendEncuestadores" id="sendEncuestadores">
-        Calcular numero de encuestadores
+        Calcular numero de encuestas
     </button>
 </li>
 
 <li>
-      <span class="mujeres">Encuestadores mujeres 18-24:  </span> 
+      <span class="mujeres">Encuestas mujeres 18-24:  </span> 
       <output id="lb_encuestadoresMujeres_18_24" for="lb_encuestadoresMujeres_18_24"></output>
 
 
 </li>
       <li>
-      <span class="hombres">Encuestadores hombres 18-24:  </span> 
+      <span class="hombres">Encuestas hombres 18-24:  </span> 
       <output id="lb_encuestadoresHombres_18_24" for="lb_encuestadoresHombres_18_24"></output>
 
 </li>
 
 <li>
-      <span class="mujeres">Encuestadores mujeres 25-34:  </span> 
+      <span class="mujeres">Encuestas mujeres 25-34:  </span> 
       <output id="lb_encuestadoresMujeres_25_34"  for="lb_encuestadoresMujeres_25_34"></output>
 
 
 </li>
       <li>
-      <span class="hombres">Encuestadores hombres 25-34:  </span> 
+      <span class="hombres">Encuestas hombres 25-34:  </span> 
       <output id="lb_encuestadoresHombres_25_34" for="lb_encuestadoresHombres_25_34"></output>
 
 </li>
 
 <li>
-      <span class="mujeres">Encuestadores mujeres 35-49:  </span> 
+      <span class="mujeres">Encuestas mujeres 35-49:  </span> 
       <output id="lb_encuestadoresMujeres_35_49" for="lb_encuestadoresMujeres_35_49"></output>
 
 
 </li>
       <li>
-      <span class="hombres">Encuestadores hombres 35-49:  </span> 
+      <span class="hombres">Encuestas hombres 35-49:  </span> 
       <output id="lb_encuestadoresHombres_35_49" for="lb_encuestadoresHombres_35_49"></output>
 </li>
 
 <li>
-      <span class="mujeres">Encuestadores mujeres 50-64:  </span> 
+      <span class="mujeres">Encuestas mujeres 50-64:  </span> 
       <output id="lb_encuestadoresMujeres_50_64" for="lb_encuestadoresMujeres_50_64"></output>
 </li>
       <li>
-      <span class="hombres">Encuestadores hombres 50-64:  </span> 
+      <span class="hombres">Encuestas hombres 50-64:  </span> 
       <output id="lb_encuestadoresHombres_50_64" for="lb_encuestadoresHombres_50_64"></output>
 </li>
 
 <li>
-      <span class="mujeres">Encuestadores mujeres 65 o más:  </span> 
+      <span class="mujeres">Encuestas mujeres 65 o más:  </span> 
       <output id="lb_encuestadoresMujeres_65" for="lb_encuestadoresMujeres_65"></output>
 </li>
       <li>
-      <span class="hombres">Encuestadores hombres 65 o más:  </span> 
+      <span class="hombres">Encuestas hombres 65 o más:  </span> 
       <output id="lb_encuestadoresHombres_65" for="lb_encuestadoresHombres_65"></output>
 </li>
 
