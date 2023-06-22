@@ -106,7 +106,13 @@ n_redondeado = int(np.ceil(n_variable))
 # PERSONAL DE CONFIANZA
 
 personal_confianza = []
-for ni in ni_list:
+
+# Extract the "_ni" keys and sort them
+ni_keys = sorted(key for key in input_data.keys() if "_ni" in key)
+
+# Iterate over the sorted ni_keys to calculate personal_confianza values in the correct order
+for key in ni_keys:
+    ni = float(input_data[key])
     personal = ni / sumaNi * n_redondeado
     personal = np.ceil(personal)
     personal = int(personal)
@@ -115,6 +121,8 @@ for ni in ni_list:
 # Recorre la matriz y añade "Estrato i" a cada elemento
 for i, num in enumerate(personal_confianza):
     personal_confianza[i] = " Estrato " + str(i + 1) + ":" + str(num)
+
+
 
 # Crear un diccionario con claves correspondientes a los nombres de entrada
 # y valores correspondientes a los valores de salida
