@@ -2709,7 +2709,7 @@
 </li>
 
 <li>
-      <h4>Estrato 1</h4>
+      <h4>Rango de Edad 1</h4>
 </li>
 
 <li>
@@ -2725,7 +2725,7 @@
 </li>
 
 <li>
-      <h4>Estrato 2</h4>
+      <h4>Rango de Edad 2</h4>
 </li>
 
 <li>
@@ -2741,7 +2741,7 @@
 </li>
 
 <li>
-      <h4>Estrato 3</h4>
+      <h4>Rango de Edad 3</h4>
 </li>
 
 <li>
@@ -2757,7 +2757,7 @@
 </li>
 
 <li>
-      <h4>Estrato 4</h4>
+      <h4>Rango de Edad 4</h4>
 </li>
 
 <li>
@@ -2773,7 +2773,7 @@
 </li>
 
 <li>
-      <h4>Estrato 5</h4>
+      <h4>Rango de Edad 5</h4>
 </li>
 
 <li>
