@@ -97,7 +97,7 @@
                     <tr>
                         <td>{{ $user->getName() }}</td>
                         <td>{{ $user->getEmail() }}</td>
-                        <td>Editar</td>
+                        <td><a href="{{ route('admin.user.edit', $user->getId()) }}">Editar</a></td>
                         <td>Eliminar</td>
                     </tr>
                 @endforeach

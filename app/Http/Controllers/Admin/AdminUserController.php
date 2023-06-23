@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
 {
@@ -51,5 +52,17 @@ class AdminUserController extends Controller
     
         return redirect()->back();
     }
-    
+
+    public function edit($id)
+    {
+    $user = User::findOrFail($id);
+    $viewData = [];
+    $viewData["title"] = $user->getName()." - Editar usuario - SIMULE";
+    $viewData["subtitle"] = "Detalles";
+    $viewData["user"] = User::findOrFail($id); // Add the user variable to the viewData array
+
+    // Perform any necessary logic for editing the fields
+        
+    return view('admin.user.edit')->with("viewData", $viewData);
+    }
 }
