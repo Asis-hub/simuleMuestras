@@ -52,6 +52,7 @@
 
 <!-- Añade un "change" event listener por elemento <select> -->
 <select name="entidades" id="entidad-select" onchange="showSelect()">
+<option value="">Selecciona una entidad</option>
 <option value="AGUASCALIENTES">Aguascalientes</option>
 <option value="BAJA CALIFORNIA">Baja California</option>
 <option value="BAJA CALIFORNIA SUR">Baja California Sur</option>
@@ -89,6 +90,7 @@
 
       <!-- Añade los elementos de <select> para los estados de la republica, pero los esconde por default -->
       <select name="aguascalientes" id="aguascalientes-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AGUASCALIENTES">Aguascalientes</option>
 <option value="ASIENTOS">Asientos</option>
@@ -104,6 +106,7 @@
       </select>
       
       <select name="bajacalifornia" id="bajacalifornia-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ENSENADA">Ensenada</option>
 <option value="MEXICALI">Mexicali</option>
@@ -114,6 +117,7 @@
       </select>
 
       <select name="bajacaliforniasur" id="bajacaliforniasur-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="COMONDU">Comondu</option>
 <option value="LA PAZ">La Paz</option>
@@ -123,6 +127,7 @@
       </select>
 
       <select name="campeche" id="campeche-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="CALAKMUL ">Calakmul </option>
 <option value="CALKINI">Calkini</option>
@@ -140,6 +145,7 @@
       </select>
 
       <select name="coahuila" id="coahuila-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABASOLO">Abasolo</option>
 <option value="ACUÐA">Acuða</option>
@@ -182,6 +188,7 @@
       </select>
 
       <select name="colima" id="colima-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ARMERIA">Armeria</option>
 <option value="COLIMA">Colima</option>
@@ -196,6 +203,7 @@
       </select>
 
       <select name="chiapas" id="chiapas-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACACOYAGUA">Acacoyagua</option>
 <option value="ACALA">Acala</option>
@@ -324,6 +332,7 @@
       </select>
 
       <select name="chihuahua" id="chihuahua-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AHUMADA">Ahumada</option>
 <option value="ALDAMA">Aldama</option>
@@ -395,6 +404,7 @@
       </select>
 
       <select name="ciudaddemexico" id="ciudaddemexico-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ALVARO OBREGON">Alvaro Obregon</option>
 <option value="AZCAPOTZALCO">Azcapotzalco</option>
@@ -415,6 +425,7 @@
       </select>
 
       <select name="durango" id="durango-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="CANATLAN">Canatlan</option>
 <option value="CANELAS">Canelas</option>
@@ -458,6 +469,7 @@
       </select>
 
       <select name="guanajuato" id="guanajuato-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABASOLO">Abasolo</option>
 <option value="ACAMBARO">Acambaro</option>
@@ -508,6 +520,7 @@
       </select>
 
       <select name="guerrero" id="guerrero-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
         <option value="ACAPULCO DE JUAREZ">Acapulco De Juarez</option>
 <option value="ACATEPEC">Acatepec</option>
@@ -593,6 +606,7 @@
       </select>
 
       <select name="hidalgo" id="hidalgo-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACATLAN">Acatlan</option>
 <option value="ACAXOCHITLAN">Acaxochitlan</option>
@@ -681,6 +695,7 @@
       </select>
 
       <select name="jalisco" id="jalisco-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACATIC">Acatic</option>
 <option value="ACATLAN DE JUAREZ">Acatlan De Juarez</option>
@@ -810,6 +825,7 @@
       </select>
 
       <select name="mexico" id="mexico-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACAMBAY DE RUIZ CASTAÐEDA">Acambay De Ruiz Castaðeda</option>
 <option value="ACOLMAN">Acolman</option>
@@ -939,6 +955,7 @@
       </select>
 
       <select name="michoacan" id="michoacan-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACUITZIO">Acuitzio</option>
 <option value="AGUILILLA">Aguililla</option>
@@ -1056,6 +1073,7 @@
       </select>
 
       <select name="morelos" id="morelos-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AMACUZAC">Amacuzac</option>
 <option value="ATLATLAHUCAN">Atlatlahucan</option>
@@ -1095,6 +1113,7 @@
       </select>
 
       <select name="nayarit" id="nayarit-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACAPONETA">Acaponeta</option>
 <option value="AHUACATLAN">Ahuacatlan</option>
@@ -1119,6 +1138,7 @@
       </select>
 
       <select name="nuevoleon" id="nuevoleon-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABASOLO">Abasolo</option>
 <option value="AGUALEGUAS">Agualeguas</option>
@@ -1174,6 +1194,7 @@
       </select>
 
       <select name="oaxaca" id="oaxaca-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABEJONES">Abejones</option>
 <option value="ACATLAN DE PEREZ FIGUEROA">Acatlan De Perez Figueroa</option>
@@ -1746,6 +1767,7 @@
       </select>
 
       <select name="puebla" id="puebla-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACAJETE">Acajete</option>
 <option value="ACATENO">Acateno</option>
@@ -1968,6 +1990,7 @@
       </select>
 
       <select name="queretaro" id="queretaro-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AMEALCO DE BONFIL">Amealco De Bonfil</option>
 <option value="ARROYO SECO">Arroyo Seco</option>
@@ -1990,6 +2013,7 @@
       </select>
 
       <select name="quintanaroo" id="quintanaroo-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="BACALAR">Bacalar</option>
 <option value="BENITO JUAREZ">Benito Juarez</option>
@@ -2005,6 +2029,7 @@
       </select>
 
       <select name="sanluispotosi" id="sanluispotosi-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AHUALULCO">Ahualulco</option>
 <option value="ALAQUINES">Alaquines</option>
@@ -2067,6 +2092,7 @@
       </select>
 
       <select name="sinaloa" id="sinaloa-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="AHOME">Ahome</option>
 <option value="ANGOSTURA">Angostura</option>
@@ -2089,6 +2115,7 @@
       </select>
 
       <select name="sonora" id="sonora-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACONCHI">Aconchi</option>
 <option value="AGUA PRIETA">Agua Prieta</option>
@@ -2165,6 +2192,7 @@
       </select>
 
       <select name="tabasco" id="tabasco-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="BALANCAN">Balancan</option>
 <option value="CARDENAS">Cardenas</option>
@@ -2186,6 +2214,7 @@
       </select>
 
       <select name="tamaulipas" id="tamaulipas-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABASOLO">Abasolo</option>
 <option value="ALDAMA">Aldama</option>
@@ -2233,6 +2262,7 @@
       </select>
 
       <select name="tlaxcala" id="tlaxcala-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACUAMANALA DE MIGUEL HIDALGO">Acuamanala De Miguel Hidalgo</option>
 <option value="AMAXAC DE GUERRERO">Amaxac De Guerrero</option>
@@ -2297,6 +2327,7 @@
       </select>
 
       <select name="veracruz" id="veracruz-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ACAJETE">Acajete</option>
 <option value="ACATLAN">Acatlan</option>
@@ -2513,6 +2544,7 @@
       </select>
 
       <select name="yucatan" id="yucatan-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="ABALA">Abala</option>
 <option value="ACANCEH">Acanceh</option>
@@ -2624,6 +2656,7 @@
 
 
       <select name="zacatecas" id="zacatecas-select" style="display: none;" onchange="showSelect()">
+      <option value="">Selecciona un municipio</option>
       <option value="TODOS">Todos los municipios</option>
       <option value="APOZOL">Apozol</option>
 <option value="APULCO">Apulco</option>
