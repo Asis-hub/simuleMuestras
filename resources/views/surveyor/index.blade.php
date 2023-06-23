@@ -93,7 +93,7 @@
                             <div class="col">
                                 <div class="mb-3 row">
                                     <button type="button" class="send" id="send">
-                                        Cálcular nuevo de encuestadores
+                                        Calcular número de encuestadores
                                     </button>
                                     <label class="col-form-label">Número de encuestadores:</label>
                                     <div class="col-lg-10 col-md-6 col-sm-12">
