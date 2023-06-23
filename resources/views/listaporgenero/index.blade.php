@@ -22,7 +22,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <a href="{{ route('listaporgenero.show', ['id' => $listaporgenero->getId()]) }}"
-                                class="btn bg-primary text-white">Cálculo de lista nominal por géneroc:
+                                class="btn bg-primary text-white">Cálculo de lista nominal por género:
                                 {{ $listaporgenero->getCreatedAt() }}</a>
                         </div>
                     </div>

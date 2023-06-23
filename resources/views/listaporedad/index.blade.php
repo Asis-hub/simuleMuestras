@@ -2893,7 +2893,7 @@
 
 <li>
 
-      <h3 class="h2">Numero de encuestas:</h3>
+      <h3 class="h2">Número de encuestas:</h3>
 
       <input id="lb_input_numEncuestadores" name="lb_input_numEncuestadores" type="text">
 
@@ -2901,7 +2901,7 @@
 
 <li>
       <button type="button" class="sendEncuestadores" id="sendEncuestadores">
-        Calcular numero de encuestas
+        Calcular número de encuestas
     </button>
 </li>
 
@@ -4342,6 +4342,7 @@ $(document).ready(function(){
                               const ProporcionHombres_50_64 = $('#lb_ProporcionHombres_50_64').val();
                               const ProporcionMujeres_65 = $('#lb_ProporcionMujeres_65').val();
                               const ProporcionHombres_65 = $('#lb_ProporcionHombres_65').val();
+                              const numEncuestadores = $('[name=lb_input_numEncuestadores').val();
                               const EncuestadoresMujeres_18_24 = $('#lb_encuestadoresMujeres_18_24').val();
                               const EncuestadoresHombres_18_24 = $('#lb_encuestadoresHombres_18_24').val();
                               const EncuestadoresMujeres_25_34 = $('#lb_encuestadoresMujeres_25_34').val();

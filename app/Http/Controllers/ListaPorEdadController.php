@@ -56,6 +56,7 @@ class ListaPorEdadController extends Controller
             'lb_ProporcionHombres_50_64' => ['required', 'string', 'max:255'],
             'lb_ProporcionMujeres_65' => ['required', 'string', 'max:255'],
             'lb_ProporcionHombres_65' => ['required', 'string', 'max:255'],
+            'lb_input_numEncuestadores' => ['required', 'string', 'max:255'],
             'lb_encuestadoresMujeres_18_24' => ['required', 'string', 'max:255'],
             'lb_encuestadoresHombres_18_24' => ['required', 'string', 'max:255'],
             'lb_encuestadoresMujeres_25_34' => ['required', 'string', 'max:255'],
@@ -97,6 +98,7 @@ class ListaPorEdadController extends Controller
         $listaporedad->proporcion_hombres_50_64 = $validatedData['lb_ProporcionHombres_50_64'];
         $listaporedad->proporcion_mujeres_65_mas = $validatedData['lb_ProporcionMujeres_65'];
         $listaporedad->proporcion_hombres_65_mas = $validatedData['lb_ProporcionHombres_65'];
+        $listaporedad->encuestadores_total = $validatedData['lb_input_numEncuestadores'];
         $listaporedad->encuestadores_mujeres_18_24 = $validatedData['lb_encuestadoresMujeres_18_24'];
         $listaporedad->encuestadores_hombres_18_24 = $validatedData['lb_encuestadoresHombres_18_24'];
         $listaporedad->encuestadores_mujeres_25_34 = $validatedData['lb_encuestadoresMujeres_25_34'];

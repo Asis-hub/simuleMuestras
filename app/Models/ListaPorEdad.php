@@ -207,6 +207,14 @@ class ListaPorEdad extends Model
     {
         $this->attributes['proporcion_hombres_65_mas'] = $proporcion_hombres_65_mas;
     }
+    public function getEncuestadoresTotal()
+    {
+        return $this->attributes['encuestadores_total'];
+    }
+    public function setEncuestadoresTotal($encuestadores_mujeres_18_24)
+    {
+        $this->attributes['encuestadores_total'] = $encuestadores_mujeres_18_24;
+    }
     public function getEncuestadoresMujeres_18_24()
     {
         return $this->attributes['encuestadores_mujeres_18_24'];

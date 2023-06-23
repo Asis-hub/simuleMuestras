@@ -26,7 +26,7 @@ class ListaPorEdadExport implements FromCollection, WithHeadings
         'Proporción Hombres 18-24', 'Proporción Mujeres 25-34', 'Proporción Hombres 25-34',
         'Proporción Mujeres 35-49', 'Proporción Hombres 35-49', 'Proporción Mujeres 50-64',
         'Proporción Hombres 50-64', 'Proporción Mujeres 65 o más', 'Proporción Hombres 65 o más',
-        '', 'Encuestadores Mujeres 18-24', 'Encuestadores Hombres 18-24', 'Encuestadores Mujeres 25-34',
+        '', 'Número de encuestadores', 'Encuestadores Mujeres 18-24', 'Encuestadores Hombres 18-24', 'Encuestadores Mujeres 25-34',
         'Encuestadores Hombres 25-34', 'Encuestadores Mujeres 35-49', 'Encuestadores Hombres 35-49',
         'Encuestadores Mujeres 50-64', 'Encuestadores Hombres 50-64', 'Encuestadores Mujeres 65 o más',
         'Encuestadores Hombres 65 o más'
@@ -64,6 +64,7 @@ class ListaPorEdadExport implements FromCollection, WithHeadings
         $this->listaporedad->getProporcionMujeres_65_mas(),
         $this->listaporedad->getProporcionHombres_65_mas(),
         '',
+        $this->listaporedad->getEncuestadoresTotal(),
         $this->listaporedad->getEncuestadoresMujeres_18_24(),
         $this->listaporedad->getEncuestadoresHombres_18_24(),
         $this->listaporedad->getEncuestadoresMujeres_25_34(),

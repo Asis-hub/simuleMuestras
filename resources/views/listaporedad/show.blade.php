@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        Reporte Lista nominal por genero #{{ $viewData['lista_por_edads']->getId() }}
+                        Reporte Lista nominal por edad #{{ $viewData['lista_por_edads']->getId() }}
                     </h5>
                     <div class="row">
                         <div class="col">
@@ -24,6 +24,8 @@
                             <strong>URL de lista por edad:</strong> {{ $viewData['lista_por_edads']->getUrlListaPorEdad() }}
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <div class="row">
                         <div class="col">
                             <strong>Lista total:</strong> {{ $viewData['lista_por_edads']->getListaTotal() }}
@@ -69,7 +71,8 @@
                             <strong>Lista de Hombres 65 o más:</strong> {{ $viewData['lista_por_edads']->getListaHombres_65_mas() }}
                         </div>
                     </div>
-
+                    <br>
+                    <br>
 
                     <div class="row">
                         <div class="col">
@@ -111,8 +114,14 @@
                             <strong>Proporción de Hombres 65 o más:</strong> {{ $viewData['lista_por_edads']->getProporcionHombres_65_mas() }}
                         </div>
                     </div>
-
-
+                    <br>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <strong>Número de encuestadores:</strong> {{ $viewData['lista_por_edads']->getEncuestadoresTotal() }}
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <strong>Encuestadoras Mujeres 18 a 24:</strong> {{ $viewData['lista_por_edads']->getEncuestadoresMujeres_18_24() }}
@@ -153,7 +162,8 @@
                             <strong>Encuestadores Hombres 65 o más:</strong> {{ $viewData['lista_por_edads']->getEncuestadoresHombres_65_mas() }}
                         </div>
                     </div>
-                    
+                    <br>
+                    <br>
                     <div class="row">
                         <div class="col">
                             <strong>Autor:</strong> {{ $viewData['lista_por_edads']->getAutor() }}
