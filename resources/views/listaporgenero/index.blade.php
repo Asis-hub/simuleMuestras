@@ -36,11 +36,10 @@
     <div class="card-body">
 <label for="entidades">Elija la entidad y/o el municipio a consultar:</label>
 
-<label for="lb_entidad" id="lb_entidad"></label>
-
 <br>
 
-<label for="lb_municipio" id="lb_municipio"></label>
+<label for="lb_entidad" id="lb_entidad" style="display: none;"></label>
+<label for="lb_municipio" id="lb_municipio" style="display: none;"></label>
 
 <br>
 
