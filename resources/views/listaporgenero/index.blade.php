@@ -2939,7 +2939,7 @@
             veracruzSelect.style.display = "none";
             yucatanSelect.style.display = "none";
             zacatecasSelect.style.display = "none";
-            document.getElementById("lb_municipio").innerHTML = bajacaliforniasurSelect.value;
+            document.getElementById("lb_municipio").innerHTML = coahuilaSelect.value;
             document.getElementById("lb_entidad").innerHTML = entidadesSelect.value;
           }else if (entidadesSelect.value === "COLIMA") {
             aguascalientesSelect.style.display = "none";
