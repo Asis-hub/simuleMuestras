@@ -9,7 +9,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">
-                        Reporte Lista nominal por genero #{{ $viewData['lista_por_generos']->getId() }}
+                        Reporte Lista nominal por género #{{ $viewData['lista_por_generos']->getId() }}
                     </h5>
                     <div class="row">
                         <div class="col">

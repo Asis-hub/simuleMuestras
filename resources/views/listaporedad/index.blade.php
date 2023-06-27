@@ -2893,7 +2893,7 @@
 
       <h3 class="h2">Número de encuestas:</h3>
 
-      <input id="lb_input_numEncuestadores" name="lb_input_numEncuestadores" type="text">
+      <input id="lb_input_numEncuestadores" id="lb_input_numEncuestadores" name="lb_input_numEncuestadores" type="text">
 
 </li>
 
@@ -4375,6 +4375,7 @@ $(document).ready(function(){
                               console.log(ProporcionHombres_50_64);
                               console.log(ProporcionMujeres_65);
                               console.log(ProporcionHombres_65);
+                              console.log(numEncuestadores);
                               console.log(EncuestadoresMujeres_18_24);
                               console.log(EncuestadoresHombres_18_24);
                               console.log(EncuestadoresMujeres_25_34);
@@ -4414,6 +4415,7 @@ $(document).ready(function(){
                                           lb_ProporcionHombres_50_64 : ProporcionHombres_50_64,
                                           lb_ProporcionMujeres_65 : ProporcionMujeres_65,
                                           lb_ProporcionHombres_65 : ProporcionHombres_65,
+                                          lb_input_numEncuestadores : numEncuestadores,
                                           lb_encuestadoresMujeres_18_24 : EncuestadoresMujeres_18_24,
                                           lb_encuestadoresHombres_18_24 : EncuestadoresHombres_18_24,
                                           lb_encuestadoresMujeres_25_34 : EncuestadoresMujeres_25_34,
