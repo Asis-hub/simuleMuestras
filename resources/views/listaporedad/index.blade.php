@@ -4430,6 +4430,7 @@ $(document).ready(function(){
                                     dataType: 'json',
                                     success: function(response) {
                                         // Handle the response from the server
+                                        location.reload();
                                         console.log(response);
                                     },
                                     error: function(xhr, textStatus, errorThrown) {

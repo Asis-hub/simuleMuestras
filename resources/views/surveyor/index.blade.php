@@ -165,6 +165,7 @@
                                     success: function(response) {
                                         // Handle the response from the server
                                         console.log(response);
+                                        location.reload();
                                     },
                                     error: function(xhr, textStatus, errorThrown) {
                                         // Handle any error that occurs during the AJAX request

@@ -14,7 +14,7 @@
                         @endforeach
                     </ul>
                 @endif
-                <form method="POST" action="{{ route('admin.user.store') }}">
+                <form method="POST" action="{{ route('admin.user.store') }}" onsubmit="reloadPage()">
                     @csrf
                     <div class="row">
                         <div class="col">
@@ -35,14 +35,9 @@
                         </div>
                         <div class="col">
                             <div class="mb-3 row">
-                                <label for="password"
-                                    class="col-form-label">{{ __('Contraseña') }}</label>
-
+                                <label for="password" class="col-form-label">{{ __('Contraseña') }}</label>
                                 <div class="col-md-6">
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
-
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -53,30 +48,26 @@
                         </div>
                         <div class="col">
                             <div class="mb-3 row">
-                                <label for="password-confirm"
-                                    class="col-form-label">{{ __('Confirmar Contraseña') }}</label>
-
+                                <label for="password-confirm" class="col-form-label">{{ __('Confirmar Contraseña') }}</label>
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control"
-                                        name="password_confirmation" required autocomplete="new-password">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3 row">
-                            <label class="col-form-label">Rol de usuario:</label>
-                            <select name="roles" id="rol-select" onchange="showSelect()">
-                                <option value="auxiliar">Auxiliar</option>
-                                <option value="coordinador">Coordinador</option>
-                                <option value="admin">Administrador</option>
-                            </select>
+                                <label class="col-form-label">Rol de usuario:</label>
+                                <select name="roles" id="rol-select" onchange="showSelect()">
+                                    <option value="auxiliar">Auxiliar</option>
+                                    <option value="coordinador">Coordinador</option>
+                                    <option value="admin">Administrador</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
         </div>
     </div>
     <div class="card-header">
@@ -104,5 +95,12 @@
             </tbody>
         </table>
     </div>
-    </div>
 @endsection
+
+@push('scripts')
+    <script>
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+@endpush
