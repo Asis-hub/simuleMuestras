@@ -132,8 +132,18 @@
                                     },
                                     dataType: 'text',
                                     success: function(data) {
-                                        $("#lb_respuesta").html(data)
-                                        console.log(data)
+                                        if (data.trim() === '') {
+                                                alert("Ocurrió un error, revisar los datos de entrada");
+                                            } else {
+                                                $("#lb_respuesta").html(data);
+                                                console.log(data);
+                                            }
+                                    },
+                                    error: function(xhr, textStatus, errorThrown) {
+                                        // Handle any error that occurs during the AJAX request
+                                        alert("Ocurrió un error: \n" + errorThrown );
+                                        console.log(textStatus);
+                                        console.log(errorThrown);
                                     }
                                 });
                             });

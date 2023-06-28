@@ -4242,7 +4242,13 @@ $(document).ready(function(){
             proporcion_65_Mujeres = data[19]
             proporcion_65_Hombres = data[20]
 
-          }
+          },
+            error: function(xhr, textStatus, errorThrown) {
+                // Handle any error that occurs during the AJAX request
+                alert("Ocurrió un error: \n" + errorThrown );
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
       });    
 });
 });
