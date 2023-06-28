@@ -23,6 +23,14 @@ class SurveyorController extends Controller
         $viewData["surveyors"] = Surveyor::all();
         return view('surveyor.index')->with("viewData", $viewData);
     }
+    public function list()
+    {
+        $viewData = [];
+        $viewData["title"] = "SIMULE - CEOA";
+        $viewData["subtitle"] = "Lista de reportes de cálculo de cuotas";
+        $viewData["surveyors"] = Surveyor::all();
+        return view('surveyor.list')->with("viewData", $viewData);
+    }
     public function show($id)
     {
         $viewData = [];

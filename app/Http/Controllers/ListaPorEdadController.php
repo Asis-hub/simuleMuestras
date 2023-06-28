@@ -19,6 +19,14 @@ class ListaPorEdadController extends Controller
         $viewData["lista_por_edads"] = ListaPorEdad::all();
         return view('listaporedad.index')->with("viewData", $viewData);
     }
+    public function list()
+    {
+        $viewData = [];
+        $viewData["title"] = "SIMULE - CEOA";
+        $viewData["subtitle"] = "Reportes de lista nominal por edad";
+        $viewData["lista_por_edads"] = ListaPorEdad::all();
+        return view('listaporedad.list')->with("viewData", $viewData);
+    }
     public function show($id)
     {
         $viewData = [];

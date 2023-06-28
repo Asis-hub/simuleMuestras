@@ -19,7 +19,7 @@
   <body>
 
   <div class="row">
-            @foreach ($viewData['lista_por_edads'] as $listaporedad)
+            @foreach ($viewData['lista_por_edads']->reverse()->take(4) as $listaporedad)
                 <div class="col-md-4 col-lg-3 mb-2">
                     <div class="card">
                         <div class="card-body text-center">

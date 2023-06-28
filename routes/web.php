@@ -27,17 +27,20 @@ Auth::routes(['register' => true]);
 Route::middleware(['auth'])->group(function () {
     Route::post('/reportesencuestadores/guardar', 'App\Http\Controllers\SurveyorController@store')->name("surveyor.store");
     Route::get('/reportesencuestadores', 'App\Http\Controllers\SurveyorController@index')->name("surveyor.index");
+    Route::get('/reportesencuestadores/todos', 'App\Http\Controllers\SurveyorController@list')->name("surveyor.list");
     Route::get('/encuestadores/{id}', 'App\Http\Controllers\SurveyorController@show')->name("surveyor.show");
     Route::get('/encuestadores/export/{id}', 'App\Http\Controllers\SurveyorController@exportToExcel')->name('surveyor.export');
     Route::get('/encuestadores/edit/{id}', 'App\Http\Controllers\SurveyorController@editFields')->name('surveyor.edit');
     
     Route::get('/listaporgenero', 'App\Http\Controllers\ListaPorGeneroController@index')->name("listaporgenero.index");
+    Route::get('/listaporgenero/todos', 'App\Http\Controllers\ListaPorGeneroController@list')->name("listaporgenero.list");
     Route::post('/listaporgenero/guardar', 'App\Http\Controllers\ListaPorGeneroController@store')->name("listaporgenero.store");
     Route::get('/listaporgenero/{id}', 'App\Http\Controllers\ListaPorGeneroController@show')->name("listaporgenero.show");
     Route::get('/listaporgenero/export/{id}', 'App\Http\Controllers\ListaPorGeneroController@exportToExcel')->name('listaporgenero.export');
     Route::get('/listaporgenero/edit/{id}', 'App\Http\Controllers\ListaPorGeneroController@editFields')->name('listaporgenero.edit');
     
     Route::get('/listaporedad', 'App\Http\Controllers\ListaPorEdadController@index')->name("listaporedad.index");
+    Route::get('/listaporedad/todos', 'App\Http\Controllers\ListaPorEdadController@list')->name("listaporedad.list");
     Route::post('/listaporedad/guardar', 'App\Http\Controllers\ListaPorEdadController@store')->name("listaporedad.store");
     Route::get('/listaporedad/{id}', 'App\Http\Controllers\ListaPorEdadController@show')->name("listaporedad.show");
     Route::get('/listaporedad/export/{id}', 'App\Http\Controllers\ListaPorEdadController@exportToExcel')->name("listaporedad.export");

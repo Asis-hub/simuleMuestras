@@ -25,17 +25,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-                @if(Route::is('surveyor.show'))
+                @if(Route::is('surveyor.index'))
+                    <a class="nav-link active" href="{{ route('surveyor.list') }}">
+                        Ver todos los reportes de cuotas
+                    </a>
+                @endif
+                @if(Route::is('listaporgenero.index'))
+                    <a class="nav-link active" href="{{ route('listaporgenero.list') }}">
+                        Ver todos los reportes de lista por género
+                    </a>
+                @endif
+                @if(Route::is('listaporedad.index'))
+                    <a class="nav-link active" href="{{ route('listaporedad.list') }}">
+                        Ver todos los reportes de lista por rangos de edad
+                    </a>
+                @endif
+                @if(Route::is('surveyor.show') || Route::is('surveyor.list'))
                     <a class="nav-link active" href="{{ route('surveyor.index') }}">
                         &larr; Regresar
                     </a>
                 @endif
-                @if(Route::is('listaporgenero.show'))
+                @if(Route::is('listaporgenero.show') || Route::is('listaporgenero.list'))
                     <a class="nav-link active" href="{{ route('listaporgenero.index') }}">
                         &larr; Regresar
                     </a>
                 @endif
-                @if(Route::is('listaporedad.show'))
+                @if(Route::is('listaporedad.show') || Route::is('listaporedad.list'))
                     <a class="nav-link active" href="{{ route('listaporedad.index') }}">
                         &larr; Regresar
                     </a>

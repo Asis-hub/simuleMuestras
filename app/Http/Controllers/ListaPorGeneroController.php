@@ -22,6 +22,14 @@ class ListaPorGeneroController extends Controller
         $viewData["lista_por_generos"] = ListaPorGenero::all();
         return view('listaporgenero.index')->with("viewData", $viewData);
     }
+    public function list()
+    {
+        $viewData = [];
+        $viewData["title"] = "SIMULE - CEOA";
+        $viewData["subtitle"] = "Reportes de lista nominal por género";
+        $viewData["lista_por_generos"] = ListaPorGenero::all();
+        return view('listaporgenero.list')->with("viewData", $viewData);
+    }
     public function show($id)
     {
         $viewData = [];
