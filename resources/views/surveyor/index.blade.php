@@ -165,10 +165,12 @@
                                     success: function(response) {
                                         // Handle the response from the server
                                         console.log(response);
+                                        alert("Se guardó con éxito");
                                         location.reload();
                                     },
                                     error: function(xhr, textStatus, errorThrown) {
                                         // Handle any error that occurs during the AJAX request
+                                        alert("Ocurrió un error: \n" + errorThrown );
                                         console.log(textStatus);
                                         console.log(errorThrown);
                                     }

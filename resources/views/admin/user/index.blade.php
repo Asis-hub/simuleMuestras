@@ -14,7 +14,7 @@
                         @endforeach
                     </ul>
                 @endif
-                <form method="POST" action="{{ route('admin.user.store') }}" onsubmit="reloadPage()">
+                <form method="POST" action="{{ route('admin.user.store') }}" onsubmit="return reloadPage(event)">
                     @csrf
                     <div class="row">
                         <div class="col">
@@ -99,8 +99,33 @@
 
 @push('scripts')
     <script>
-        function reloadPage() {
-            location.reload();
+        function reloadPage(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            var form = event.target; // Access the form element
+            
+            // Perform form submission using AJAX
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Check if there are any errors after form submission
+                    var errorAlerts = document.getElementsByClassName('alert-danger');
+                    if (errorAlerts.length > 0) {
+                        alert("Se ha producido un error al enviar el formulario.");
+                    } else {
+                        alert("Se guardó con éxito!");
+                        location.reload();
+                    }
+                } else {
+                    alert("Se ha producido un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+                }
+            };
+            xhr.onerror = function () {
+                alert("Se ha producido un error al enviar el formulario. Por favor, inténtalo de nuevo.");
+            };
+            xhr.send(formData);
         }
     </script>
 @endpush

@@ -4307,7 +4307,13 @@ $(document).ready(function(){
             $("#lb_encuestadoresMujeres_65").html(data[8])
             $("#lb_encuestadoresHombres_65").html(data[9])
             console.log(data)
-          }
+          },
+            error: function(xhr, textStatus, errorThrown) {
+                // Handle any error that occurs during the AJAX request
+                alert("Ocurrió un error: \n" + errorThrown );
+                console.log(textStatus);
+                console.log(errorThrown);
+            }
       });    
 });
 });
@@ -4431,10 +4437,12 @@ $(document).ready(function(){
                                     success: function(response) {
                                         // Handle the response from the server
                                         location.reload();
+                                        alert("Se guardó con éxito");
                                         console.log(response);
                                     },
                                     error: function(xhr, textStatus, errorThrown) {
                                         // Handle any error that occurs during the AJAX request
+                                        alert("Ocurrió un error: \n" + errorThrown );
                                         console.log(textStatus);
                                         console.log(errorThrown);
                                     }
